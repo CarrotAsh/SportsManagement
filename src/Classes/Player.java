@@ -12,7 +12,7 @@ public class Player extends User{
     private final Administrator creatorUser;
 
     public Player(String userName, String password, String name, String surname, String DNI, double score,  Administrator creatorUser) {
-        super(userName, password);
+        super(userName, password); //ver como creamos finalmente el player
         this.name = name;
         this.DNI = DNI;
         this.score = score;

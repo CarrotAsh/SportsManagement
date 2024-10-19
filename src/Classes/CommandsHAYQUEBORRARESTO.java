@@ -12,12 +12,6 @@ public class CommandsHAYQUEBORRARESTO {
 
     //Esta clase después de cambiar la forma de los comandos hay que borrarla
 
-
-    public static void deletePlayer(String name, List<Player> players){
-        int i= getPlayerPosition(name, players);
-        players.remove(i);
-    }
-
     private static boolean playerExists(String name, List<Player> players){
         boolean exists = false;
         int i =0;

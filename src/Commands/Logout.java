@@ -9,6 +9,6 @@ public class Logout extends Command{
 
     @Override
     public void execute(String[] arguments) {
-        OptionsMenu.loggedUsed=null;
+        OptionsMenu.loggedUser = null;
     }
 }
