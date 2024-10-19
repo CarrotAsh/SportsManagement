@@ -1,22 +1,20 @@
+package Classes;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
-public class Commands {
+public class CommandsHAYQUEBORRARESTO {
 
     private static List<Matchmake> matchmakings = new ArrayList<>();
 
-    public static void createPlayer(String name, List<Player> players){
-        assert players.size() < 100;
-        assert !playerExists(name, players);
-        Player player = new Player(name);
-        players.add(player);
-    }
+    //Esta clase después de cambiar la forma de los comandos hay que borrarla
+
 
     public static void deletePlayer(String name, List<Player> players){
-        int i=returnPlayerPosition(name, players);
+        int i= getPlayerPosition(name, players);
         players.remove(i);
     }
 
@@ -32,10 +30,9 @@ public class Commands {
         return exists;
     }
 
-    private static int returnPlayerPosition(String name, List<Player> players){
+    private static int getPlayerPosition(String name, List<Player> players){
         assert playerExists(name, players);
-        int i =0;
-        int pos = 0;
+        int i =0, pos = 0;
         boolean found= false;
         while (!found && i<players.size()){
             if (name.equalsIgnoreCase(players.get(i).getName())){
@@ -50,8 +47,7 @@ public class Commands {
     public static void addScore(String name, double score, List<Player> players){
         assert playerExists(name, players);
         assert score>-999999;
-
-        int i = returnPlayerPosition(name, players);
+        int i = getPlayerPosition(name, players);
         players.get(i).setScore(score);
     }
 
@@ -86,21 +82,20 @@ public class Commands {
         matchmakings.clear();
     }
 
-    private static boolean playerWithMatch(Player player) {
+    private static boolean playerWithMatch(Player player){
         boolean withMatch = false;
-        int i = 0;
-        while (i < matchmakings.size() && !withMatch) {
-            if (player.getName().equals(matchmakings.get(i).getPlayer1().getName()) || player.getName().equals(matchmakings.get(i).getPlayer2().getName())) {
+        for (int i = 0; i < matchmakings.size(); i++) {
+            if(player.getName().equals(matchmakings.get(i).getMatch()[0]) || player.getName().equals(matchmakings.get(i).getMatch()[1])){
                 withMatch = true;
-                i++;
             }
+
         }
         return withMatch;
     }
 
-    public static void createMatchmake(String player1, String player2,List<Player> players){
+    public static void createMatchmake(String player1, String player2, List<Player> players){
 
-        assert !player1.equals(player2);
+        assert player1 != player2;
         assert playerExists(player1, players) && playerExists(player2, players);
         Player playerLocal = getPlayerWithName(players, player1);
         Player playerVisitor = getPlayerWithName(players, player2);
@@ -124,7 +119,7 @@ public class Commands {
             randNumber = random.nextInt(playersLeft.size());
             int index2 = playersLeft.get(randNumber);
             playersLeft.remove(randNumber);
-            matchmakings.add(new Matchmake(players.get(index), players.get(index2)));
+            createMatchmake(players.get(index).getName(), players.get(index2).getName(), players);
         }
     }
 
