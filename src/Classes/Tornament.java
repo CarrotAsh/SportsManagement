@@ -1,6 +1,7 @@
 package Classes;
 
 import java.util.Date;
+import java.util.List;
 
 public class Tornament {
     private final String name;
@@ -8,6 +9,7 @@ public class Tornament {
     private Date endDate;
     //¿Liga clase o string?
     private String sport;
+    //Lista con los participantes
 
     public Tornament(String name, Date startDate, Date endDate, String sport){
         this.name=name;

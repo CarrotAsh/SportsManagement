@@ -10,7 +10,7 @@ public class CommandsHAYQUEBORRARESTO {
 
     private static List<Matchmake> matchmakings = new ArrayList<>();
 
-    //Esta clase después de cambiar la forma de los comandos hay que borrarla
+    //Esta clase después hay que borrarla
 
     private static boolean playerExists(String name, List<Player> players){
         boolean exists = false;
