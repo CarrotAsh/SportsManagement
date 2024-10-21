@@ -1,7 +1,8 @@
 package Commands;
 
-public class TornamentDelete extends Command{
-    public TornamentDelete(String name) {
+public class TournamentList extends Command{
+
+    public TournamentList(String name) {
         super(name);
     }
 

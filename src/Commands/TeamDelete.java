@@ -13,9 +13,9 @@ public class TeamDelete extends Command{
     public void execute(String[] arguments) {
         assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
-        int i= getTeamPosition(arguments[1]);
-        //assert solo puede borrarse si no está en partido o en equipo en partido
-        OptionsMenu.Team.remove(i);
+        //int i= getTeamPosition(arguments[1]); crear metodo en la clase command
+        //assert solo puede borrarse si no está en partido o en equipo en partido -- Mas adelante
+        //OptionsMenu.teams.remove(i);
     }
 }
 

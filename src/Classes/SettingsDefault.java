@@ -14,6 +14,11 @@ public class SettingsDefault {
         OptionsMenu.commands.add(new Logout());
         OptionsMenu.commands.add(new PlayerCreate());
         OptionsMenu.commands.add(new PlayerDelete());
-        OptionsMenu.commands.add(new TornamentCreate());
+        OptionsMenu.commands.add(new TeamCreate());
+        OptionsMenu.commands.add(new TeamDelete());
+        OptionsMenu.commands.add(new TeamAdd());
+        OptionsMenu.commands.add(new TeamRemove());
+        OptionsMenu.commands.add(new TournamentCreate());
+        OptionsMenu.commands.add(new TournamentDelete());
     }
 }

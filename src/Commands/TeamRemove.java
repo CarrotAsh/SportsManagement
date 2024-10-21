@@ -1,12 +1,12 @@
 package Commands;
 
 public class TeamRemove extends Command{
-    public TeamRemove(String name) {
-        super(name);
+    public TeamRemove() {
+        super("team-remove");
     }
 
     @Override
     public void execute(String[] arguments) {
-
+        
     }
 }

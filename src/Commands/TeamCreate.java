@@ -13,8 +13,9 @@ public class TeamCreate extends Command{
 
     @Override
     public void execute(String[] arguments) {
-        arguments = arguments[1].split(";");
-        Team team = new Team;
-        OptionsMenu.team.add(arguments[i]);
+        assert arguments.length==2;
+        //assert si el equipo no existe ; Crear metodo en la clase command
+        Team team = new Team(arguments[1]);
+        OptionsMenu.teams.add(team);
     }
 }
