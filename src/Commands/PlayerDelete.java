@@ -13,9 +13,8 @@ public class PlayerDelete extends Command{
     public void execute(String[] arguments) {
         assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
-        int i= getPlayerPosition(arguments[1]);
+        int i = getPlayerPosition(arguments[1]);
         //assert solo puede borrarse si no está en partido o en equipo en partido
-
         OptionsMenu.players.remove(i);
     }
 }

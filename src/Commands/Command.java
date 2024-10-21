@@ -43,5 +43,60 @@ public abstract class Command {
         return pos;
     }
 
+    protected int getTeamPosition(String name){
+        //assert TeamExists
+        boolean found = false;
+        int i = 0, pos = 0;
+        while (!found && i < OptionsMenu.teams.size()) {
+            if (name.equalsIgnoreCase(OptionsMenu.teams.get(i).getName())) {
+                found = true;
+                pos = i;
+            }
+
+            i++;
+        }
+        return pos;
+    }
+
+    protected int getPlayerPositionTeam(String name, List<Player> players){
+        //assert jugador pertenece a Team
+        boolean found = false;
+        int i = 0, pos=0;
+        while (!found && i<players.size()){
+            if (name.equalsIgnoreCase(players.get(i).getName())){
+                pos=i;
+                found=true;
+            }
+        }
+        return pos;
+    }
+
+    protected boolean tournamentExists(String name){
+        boolean exists = false;
+        int i =0;
+        while (!exists && i< OptionsMenu.tournaments.size()){
+            if (name.equalsIgnoreCase(OptionsMenu.tournaments.get(i).getName())){
+                exists = true;
+            }
+            i++;
+        }
+        return exists;
+    }
+
+    protected int getTournamentPosition(String name) {
+        assert tournamentExists(name);
+        boolean found = false;
+        int i = 0, pos = 0;
+        while (!found && i < OptionsMenu.tournaments.size()) {
+            if (name.equalsIgnoreCase(OptionsMenu.tournaments.get(i).getName())) {
+                found = true;
+                pos = i;
+            }
+
+            i++;
+        }
+        return pos;
+    }
+
     public abstract void execute(String[] arguments);
 }

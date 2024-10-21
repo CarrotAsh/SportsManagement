@@ -12,7 +12,7 @@ public class TournamentDelete extends Command{
     public void execute(String[] arguments) {
         assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
-        //int i= geTeamPosition(arguments[1]);
-        //OptionsMenu.tornaments.remove(i);
+        int i= getTournamentPosition(arguments[1]);
+        OptionsMenu.tournaments.remove(i);
     }
 }

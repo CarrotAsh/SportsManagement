@@ -20,5 +20,9 @@ public class SettingsDefault {
         OptionsMenu.commands.add(new TeamRemove());
         OptionsMenu.commands.add(new TournamentCreate());
         OptionsMenu.commands.add(new TournamentDelete());
+        OptionsMenu.commands.add(new TournamentMatchmaking());
+        OptionsMenu.commands.add(new TournamentAdd());
+        OptionsMenu.commands.add(new TournamentRemove());
+        OptionsMenu.commands.add(new StatisticsShow());
     }
 }

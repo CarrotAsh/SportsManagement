@@ -2,7 +2,7 @@ package Commands;
 
 import Classes.Administrator;
 import Classes.OptionsMenu;
-import Classes.Tornament;
+import Classes.Tournament;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -19,9 +19,9 @@ public class TournamentCreate extends Command{
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==5; //
-        // assert no existe torneo ; Crear comando
+        assert !tournamentExists(arguments[0]);
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        Tornament tornament = new Tornament(arguments[0], LocalDate.parse(arguments[1], format),LocalDate.parse(arguments[2], format),arguments[3],arguments[4]);
-        OptionsMenu.tornaments.add(tornament);
+        Tournament tournament = new Tournament(arguments[0], LocalDate.parse(arguments[1], format),LocalDate.parse(arguments[2], format),arguments[3],arguments[4]);
+        OptionsMenu.tournaments.add(tournament);
     }
 }

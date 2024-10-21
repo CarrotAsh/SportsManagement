@@ -10,7 +10,7 @@ public class OptionsMenu {
     public static List<Player> players = new ArrayList<>();
     public static List<Administrator> administrators = new ArrayList<>();
     public static List<Team> teams = new ArrayList<>();
-    public static List<Tornament> tornaments = new ArrayList<>();
+    public static List<Tournament> tournaments = new ArrayList<>();
     public static List<Command> commands = new ArrayList<>();
     public static User loggedUser = null;
 
