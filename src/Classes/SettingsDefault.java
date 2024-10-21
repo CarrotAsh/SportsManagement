@@ -1,9 +1,6 @@
 package Classes;
 
-import Commands.Login;
-import Commands.Logout;
-import Commands.PlayerCreate;
-import Commands.PlayerDelete;
+import Commands.*;
 
 public class SettingsDefault {
     public static void loadData(){
@@ -17,5 +14,6 @@ public class SettingsDefault {
         OptionsMenu.commands.add(new Logout());
         OptionsMenu.commands.add(new PlayerCreate());
         OptionsMenu.commands.add(new PlayerDelete());
+        OptionsMenu.commands.add(new TornamentCreate());
     }
 }
