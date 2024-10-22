@@ -30,12 +30,6 @@ public class OptionsMenu {
                 }
             }
 
-            if (input[0].equalsIgnoreCase("1")){
-                for (int i = 0; i < tournaments.size(); i++) {
-                    System.out.println(tournaments.get(i).getName());
-                }
-            }
-
         }while (!completeLine.equalsIgnoreCase("close"));
     }
 }
