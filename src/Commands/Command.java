@@ -22,15 +22,14 @@ public abstract class Command {
     }
 
     protected boolean playerExists(String name){
-        boolean exists = false;
         int i =0;
-        while (!exists && i< OptionsMenu.players.size()){
+        while (i< OptionsMenu.players.size()){
                 if (name.equalsIgnoreCase(OptionsMenu.players.get(i).getName())){
-                    exists = true;
+                    return true;
                 }
             i++;
         }
-        return exists;
+        return false;
     }
 
     protected int getPlayerPosition(String name) {
@@ -63,8 +62,18 @@ public abstract class Command {
         return pos;
     }
 
+    protected boolean playerInTeam(String name, List<Player> players){
+        int i =0;
+        while (i< players.size()){
+            if (name.equalsIgnoreCase(players.get(i).getName())){
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
     protected int getPlayerPositionInTeam(String name, List<Player> players){
-        //assert jugador pertenece a Team
+        assert playerInTeam(name, players);
         boolean found = false;
         int i = 0, pos=0;
         while (!found && i<players.size()){
@@ -76,16 +85,17 @@ public abstract class Command {
         return pos;
     }
 
+
+
     protected boolean tournamentExists(String name){
-        boolean exists = false;
         int i =0;
-        while (!exists && i< OptionsMenu.tournaments.size()){
+        while (i< OptionsMenu.tournaments.size()){
             if (name.equalsIgnoreCase(OptionsMenu.tournaments.get(i).getName())){
-                exists = true;
+                return true;
             }
             i++;
         }
-        return exists;
+        return false;
     }
 
     protected int getTournamentPosition(String name) {
