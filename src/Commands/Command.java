@@ -32,6 +32,17 @@ public abstract class Command {
         return false;
     }
 
+    protected boolean teamExists(String name){
+        int i =0;
+        while (i< OptionsMenu.teams.size()){
+                if (name.equalsIgnoreCase(OptionsMenu.teams.get(i).getName())){
+                    return true;
+                }
+            i++;
+        }
+        return false;
+    }
+
     protected int getPlayerPosition(String name) {
         assert playerExists(name);
         boolean found = false;
@@ -48,7 +59,7 @@ public abstract class Command {
     }
 
     protected int getTeamPosition(String name){
-        //assert TeamExists
+        assert teamExists(name);
         boolean found = false;
         int i = 0, pos = 0;
         while (!found && i < OptionsMenu.teams.size()) {
