@@ -13,9 +13,10 @@ public class TeamCreate extends Command{
 
     @Override
     public void execute(String[] arguments) {
+        assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
         //assert si el equipo no existe ; Crear metodo en la clase command
-        Team team = new Team(arguments[1]);
+        Team team = new Team(arguments[1], new Administrator(OptionsMenu.loggedUser.getUserName(),OptionsMenu.loggedUser.getPassword()));
         OptionsMenu.teams.add(team);
     }
 }

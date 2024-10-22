@@ -11,12 +11,16 @@ public class Player extends User{
     private double moneyWin;
     private final Administrator creatorUser;
 
-    public Player(String userName, String password, String name, String surname, String DNI, double score,  Administrator creatorUser) {
-        super(userName, password); //ver como creamos finalmente el player
+    public Player(String userName, String password, String name, String surname, String DNI, double score, double winMatch, double assistScore, double tournamentsWin, double moneyWin, Administrator creatorUser) {
+        super(userName, password);
         this.name = name;
+        this.surname = surname;
         this.DNI = DNI;
         this.score = score;
-        this.surname = surname;
+        this.winMatch=winMatch;
+        this.assistScore=assistScore;
+        this.tournamentsWin=tournamentsWin;
+        this.moneyWin=moneyWin;
         this.creatorUser=creatorUser;
     }
 

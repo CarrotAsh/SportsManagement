@@ -22,7 +22,7 @@ public class Tournament {
         return name;
     }
 
-    public boolean tournamentInProgress(){
+    public boolean inProgress(){
         Boolean inProgress=false;
         LocalDate today = LocalDate.now();;
         if (today.isEqual(startDate) || today.isEqual(endDate) || (today.isAfter(startDate) && today.isBefore(endDate)) ){

@@ -15,9 +15,21 @@ public class PlayerCreate extends Command{
         assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
         arguments = arguments[1].split(";");
-        assert arguments.length==6; //implementar cuando sepamos
+        assert arguments.length==10; // userName;password;name;surname;DNI;score;winMatch;assistScore;tournamentsWin;moneyWin
         assert !playerExists(arguments[2]);
-        Player player = new Player(arguments[0],arguments[1],arguments[2], arguments[3],arguments[4],Double.parseDouble(arguments[5]), new Administrator("pepe", "uwu"));
-        OptionsMenu.players.add(player);
+
+        try {
+            Double score = Double.parseDouble(arguments[5]);
+            Double winMatch = Double.parseDouble(arguments[6]);
+            Double assistScore = Double.parseDouble(arguments[7]);
+            Double tournamentsWin = Double.parseDouble(arguments[8]);
+            Double moneyWin = Double.parseDouble(arguments[9]);
+
+            Player player = new Player(arguments[0],arguments[1],arguments[2], arguments[3],arguments[4],score,winMatch,assistScore,tournamentsWin,moneyWin, new Administrator(OptionsMenu.loggedUser.getUserName(),OptionsMenu.loggedUser.getPassword()));
+            OptionsMenu.players.add(player);
+        }catch (Exception e){
+            System.out.println("Error: Algún dato no es correcto");
+        }
+
     }
 }

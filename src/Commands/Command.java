@@ -2,8 +2,13 @@ package Commands;
 
 import Classes.OptionsMenu;
 import Classes.Player;
+import Classes.Team;
+import Classes.Tournament;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.function.Predicate;
 
 public abstract class Command {
     private final String name;
@@ -58,7 +63,7 @@ public abstract class Command {
         return pos;
     }
 
-    protected int getPlayerPositionTeam(String name, List<Player> players){
+    protected int getPlayerPositionInTeam(String name, List<Player> players){
         //assert jugador pertenece a Team
         boolean found = false;
         int i = 0, pos=0;
