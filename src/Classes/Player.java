@@ -10,6 +10,7 @@ public class Player extends User{
     private double tournamentsWin;
     private double moneyWin;
     private final Administrator creatorUser;
+    private Team team = null;
 
     public Player(String userName, String password, String name, String surname, String DNI, double score, double winMatch, double assistScore, double tournamentsWin, double moneyWin, Administrator creatorUser) {
         super(userName, password);
@@ -34,5 +35,13 @@ public class Player extends User{
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }

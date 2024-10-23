@@ -2,6 +2,7 @@ package Commands;
 
 import Classes.Administrator;
 import Classes.OptionsMenu;
+import Classes.Player;
 
 public class TeamRemove extends Command{
     public TeamRemove() {
@@ -17,6 +18,7 @@ public class TeamRemove extends Command{
         int i = getTeamPosition(arguments[1]);
         int j = getPlayerPositionInTeam(arguments[0], OptionsMenu.teams.get(i).getPlayersTeam());
         OptionsMenu.teams.get(i).getPlayersTeam().remove(j);
-
+        Player player = OptionsMenu.players.get(getPlayerPosition(arguments[0]));
+        player.setTeam(null);
     }
 }

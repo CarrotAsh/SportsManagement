@@ -1,5 +1,10 @@
 package Commands;
 
+import Classes.Administrator;
+import Classes.OptionsMenu;
+import Classes.Player;
+import Classes.Team;
+
 public class TeamAdd extends Command{
     public TeamAdd() {
         super("team-add");
@@ -7,6 +12,14 @@ public class TeamAdd extends Command{
 
     @Override
     public void execute(String[] arguments) {
-        //¿Puede un jugador estar en varios equipos?
+        assert OptionsMenu.loggedUser instanceof Administrator;
+        assert arguments.length==2;
+        arguments = arguments[1].split(";");
+        assert arguments.length==2; // player;team
+        Player player = OptionsMenu.players.get(getPlayerPosition(arguments[0]));
+        assert player.getTeam()!=null;
+        Team team = OptionsMenu.teams.get(getTeamPosition(arguments[1]));
+        team.getPlayersTeam().add(player);
+        player.setTeam(team);
     }
 }
