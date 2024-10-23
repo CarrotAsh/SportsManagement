@@ -13,12 +13,14 @@ public class TournamentList extends Command{
     @Override
     public void execute(String[] arguments) {
         assert arguments.length==1;
-        if (OptionsMenu.loggedUser instanceof Administrator){
-            //Como se comporta en admin
-        } else if (OptionsMenu.loggedUser instanceof Player) {
-            //Como se comporta en player
+        if (OptionsMenu.loggedUser==null){
+        //mostrar sin ranking
+
         }else {
-            //Como se comporta si no está logeado
+            if (OptionsMenu.loggedUser instanceof Administrator){
+                //borrar finalizados
+            }
+            //mostrar con ranking
         }
 
     }

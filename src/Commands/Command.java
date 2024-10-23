@@ -124,5 +124,83 @@ public abstract class Command {
         return pos;
     }
 
+    protected boolean playerInTournament(String name, List<Player> list){
+        int i = 0;
+        while (i<list.size()){
+            if (name.equals(list.get(i).getName())){
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+
+    protected boolean teamInTournament(String name, List<Team> list){
+        int i = 0;
+        while (i<list.size()){
+            if (name.equals(list.get(i).getName())){
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+
+    protected int getPlayerPositionInTornament(String name, List<Player> list){
+        assert playerInTournament(name, list);
+        boolean found = false;
+        int i = 0, pos = 0;
+        while (!found && i < list.size()) {
+            if (name.equalsIgnoreCase(list.get(i).getName())) {
+                found = true;
+                pos = i;
+            }
+
+            i++;
+        }
+        return pos;
+    }
+
+    protected int getTeamPositionInTornament(String name, List<Team> list){
+        assert teamInTournament(name, list);
+        boolean found = false;
+        int i = 0, pos = 0;
+        while (!found && i < list.size()) {
+            if (name.equalsIgnoreCase(list.get(i).getName())) {
+                found = true;
+                pos = i;
+            }
+
+            i++;
+        }
+        return pos;
+    }
+
+    protected int getTournamentPositionInTournamentsOfPlayer(String name, List<Tournament> list){
+        boolean found = false;
+        int i = 0, pos = 0;
+        while (!found && i < list.size()) {
+            if (name.equalsIgnoreCase(list.get(i).getName())) {
+                found = true;
+                pos = i;
+            }
+            i++;
+        }
+        return pos;
+    }
+
+    protected int getTournamentPositionInTournamentsOfTeam(String name, List<Tournament> list){
+        boolean found = false;
+        int i = 0, pos = 0;
+        while (!found && i < list.size()) {
+            if (name.equalsIgnoreCase(list.get(i).getName())) {
+                found = true;
+                pos = i;
+            }
+            i++;
+        }
+        return pos;
+    }
+
     public abstract void execute(String[] arguments);
 }

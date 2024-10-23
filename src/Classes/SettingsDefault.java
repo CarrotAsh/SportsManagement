@@ -8,7 +8,7 @@ public class SettingsDefault {
         OptionsMenu.administrators.add(new Administrator("admin@alumnos.upm.es", "1234"));
         OptionsMenu.administrators.add(new Administrator("admin2@alumnos.upm.es", "1111"));
 
-        //OptionsMenu.players.add(new Player()); Agregar los player por defecto
+        OptionsMenu.players.add(new Player("alvaro@alumnos.upm.es", "12345", "Alvaro", "Rojo", "10234765A", 10, 15, 2, 10, 1000, new Administrator("admin@alumnos.upm.es", "1234")));
 
         OptionsMenu.commands.add(new Login());
         OptionsMenu.commands.add(new Logout());

@@ -1,6 +1,7 @@
 package Classes;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Tournament {
     private final String name;
@@ -9,6 +10,8 @@ public class Tournament {
     private final String league;
     private final String sport;
     //Lista con los participantes
+    private List<Player> participatingPlayers;
+    private List<Team> participatingTeams;
 
     public Tournament(String name, LocalDate startDate, LocalDate endDate, String league, String sport){
         this.name=name;
@@ -20,6 +23,14 @@ public class Tournament {
 
     public String getName() {
         return name;
+    }
+
+    public List<Player> getParticipatingPlayers() {
+        return participatingPlayers;
+    }
+
+    public List<Team> getParticipatingTeams() {
+        return participatingTeams;
     }
 
     public boolean inProgress(){

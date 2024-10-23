@@ -3,6 +3,7 @@ package Commands;
 import Classes.Administrator;
 import Classes.OptionsMenu;
 import Classes.Player;
+import Classes.Team;
 
 public class TeamDelete extends Command{
     public TeamDelete() {
@@ -14,8 +15,20 @@ public class TeamDelete extends Command{
         assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
         int i= getTeamPosition(arguments[1]);
-        //assert solo puede borrarse si no está en partido -- mas adelante
-        OptionsMenu.teams.remove(i);
+        Team team = OptionsMenu.teams.get(i);
+        boolean active = false;
+        int j=0;
+        while (!active && j<team.getTournamentsRegistered().size()){
+            if (team.getTournamentsRegistered().get(j).inProgress()){
+                active=true;
+            }
+        }
+        if (!active){
+            OptionsMenu.teams.remove(i);
+        }else{
+            System.out.println("No se puede borrar: Tiene torneo activo");
+        }
+
     }
 }
 
