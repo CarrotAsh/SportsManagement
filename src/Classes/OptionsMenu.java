@@ -23,11 +23,17 @@ public class OptionsMenu {
             System.out.println("Introduce un comando: ");
             completeLine = scanner.nextLine();
             String[] input = completeLine.split(" ");
+            boolean correct=false;
 
             for(Command command : commands){
                 if (command.getName().equalsIgnoreCase(input[0])){
                     command.execute(input);
+                    correct=true;
                 }
+            }
+
+            if (!correct){
+                System.out.println("Comando incorrecto");
             }
 
         }while (!completeLine.equalsIgnoreCase("close"));

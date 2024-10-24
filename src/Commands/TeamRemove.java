@@ -15,10 +15,10 @@ public class TeamRemove extends Command{
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==2;// namePlayer;nameTeam
-        int i = getTeamPosition(arguments[1]);
-        int j = getPlayerPositionInTeam(arguments[0], OptionsMenu.teams.get(i).getPlayersTeam());
+        int i = getPositionInList(arguments[1], OptionsMenu.teams);
+        int j = getPositionInList(arguments[0], OptionsMenu.teams.get(i).getPlayersTeam());
         OptionsMenu.teams.get(i).getPlayersTeam().remove(j);
-        Player player = OptionsMenu.players.get(getPlayerPosition(arguments[0]));
+        Player player = OptionsMenu.players.get(getPositionInList(arguments[0],OptionsMenu.players));
         player.setTeam(null);
     }
 }

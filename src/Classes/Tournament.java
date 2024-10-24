@@ -3,15 +3,14 @@ package Classes;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Tournament {
+public class Tournament implements Nameable{
     private final String name;
     private LocalDate startDate;
     private LocalDate endDate;
     private final String league;
     private final String sport;
-    //Lista con los participantes
-    private List<Player> participatingPlayers;
-    private List<Team> participatingTeams;
+    private List<Participants> participants;
+    private List<Matchmake> matchs;
 
     public Tournament(String name, LocalDate startDate, LocalDate endDate, String league, String sport){
         this.name=name;
@@ -25,12 +24,12 @@ public class Tournament {
         return name;
     }
 
-    public List<Player> getParticipatingPlayers() {
-        return participatingPlayers;
+    public List<Participants> getParticipants() {
+        return participants;
     }
 
-    public List<Team> getParticipatingTeams() {
-        return participatingTeams;
+    public List<Matchmake> getMatchs() {
+        return matchs;
     }
 
     public boolean inProgress(){

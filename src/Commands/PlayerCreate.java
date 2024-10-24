@@ -16,7 +16,7 @@ public class PlayerCreate extends Command{
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==10; // userName;password;name;surname;DNI;score;winMatch;assistScore;tournamentsWin;moneyWin
-        assert !playerExists(arguments[2]);
+        assert !existInList(arguments[2], OptionsMenu.players);
 
         try {
             Double score = Double.parseDouble(arguments[5]);

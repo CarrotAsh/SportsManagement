@@ -13,21 +13,21 @@ public class TournamentAdd extends Command{
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==1 || arguments.length==2; // nameTournament / nameTournament;nameTeam
-        int i = getTournamentPosition(arguments[0]);
+        int i = getPositionInList(arguments[0], OptionsMenu.tournaments);
         Tournament tournament= OptionsMenu.tournaments.get(i);
         assert !tournament.inProgress();
 
         Player player = (Player) OptionsMenu.loggedUser;
         if (arguments.length==1){
-            assert !playerInTournament(player.getName(), tournament.getParticipatingPlayers());
-            tournament.getParticipatingPlayers().add(player);
+            assert !existInList(player.getName(), tournament.getParticipants());
+            tournament.getParticipants().add(player);
             player.getTournamentsRegistered().add(tournament);
         }else{
-            int j = getTeamPosition(arguments[1]);
+            int j = getPositionInList(arguments[1], OptionsMenu.teams);
             Team team= OptionsMenu.teams.get(j);
             assert player.getTeam().equals(team.getName());
-            assert !teamInTournament(team.getName(), tournament.getParticipatingTeams());
-            tournament.getParticipatingTeams().add(team);
+            assert !existInList(team.getName(), tournament.getParticipants());
+            tournament.getParticipants().add(team);
             team.getTournamentsRegistered().add(tournament);
 
         }

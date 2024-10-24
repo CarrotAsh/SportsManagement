@@ -14,7 +14,7 @@ public class TeamDelete extends Command{
     public void execute(String[] arguments) {
         assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
-        int i= getTeamPosition(arguments[1]);
+        int i= getPositionInList(arguments[1], OptionsMenu.teams);
         Team team = OptionsMenu.teams.get(i);
         boolean active = false;
         int j=0;

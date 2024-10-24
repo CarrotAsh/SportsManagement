@@ -2,7 +2,7 @@ package Classes;
 
 import java.util.List;
 
-public class Team {
+public class Team implements Participants{
     private final String name;
     private final Administrator creatorUser;
     private List<Player> playersTeam;

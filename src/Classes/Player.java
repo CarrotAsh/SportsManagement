@@ -2,7 +2,7 @@ package Classes;
 
 import java.util.List;
 
-public class Player extends User{
+public class Player extends User implements Participants{
     private final String name;
     private final String surname;
     private final String DNI;

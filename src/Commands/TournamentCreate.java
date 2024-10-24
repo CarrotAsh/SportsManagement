@@ -19,7 +19,7 @@ public class TournamentCreate extends Command{
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==5; //name;startDate;endDate;league;sport
-        assert !tournamentExists(arguments[0]);
+        assert !existInList(arguments[0], OptionsMenu.tournaments);
 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try{

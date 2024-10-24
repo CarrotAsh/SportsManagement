@@ -16,9 +16,9 @@ public class TeamAdd extends Command{
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==2; // player;team
-        Player player = OptionsMenu.players.get(getPlayerPosition(arguments[0]));
+        Player player = OptionsMenu.players.get(getPositionInList(arguments[0],OptionsMenu.players));
         assert player.getTeam()==null;
-        Team team = OptionsMenu.teams.get(getTeamPosition(arguments[1]));
+        Team team = OptionsMenu.teams.get(getPositionInList(arguments[1],OptionsMenu.teams));
         team.getPlayersTeam().add(player);
         player.setTeam(team);
     }
