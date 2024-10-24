@@ -1,5 +1,6 @@
 package Classes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player extends User implements Participants{
@@ -13,7 +14,7 @@ public class Player extends User implements Participants{
     private double moneyWin;
     private final Administrator creatorUser;
     private Team team = null;
-    private List<Tournament> tournamentsRegistered;
+    private List<Tournament> tournamentsRegistered = new ArrayList<>();
 
     public Player(String userName, String password, String name, String surname, String DNI, double score, double winMatch, double assistScore, double tournamentsWin, double moneyWin, Administrator creatorUser) {
         super(userName, password);

@@ -2,14 +2,11 @@ package Classes;
 
 public class Matchmake {
 
-    private Player[] match = new Player[2];
+    private Participants[] match = new Participants[2];
 
-    public Matchmake(Player local, Player visitor) {
-        match[0] = local;
-        match[1] = visitor;
+    public Participants[] getMatch() {
+        return match;
     }
-
-    public Player[] getMatch() { return match; }
 
     public String toString() {
         return match[0].getName() + " vs " + match[1].getName();

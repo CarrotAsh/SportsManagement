@@ -11,7 +11,7 @@ public class CommandsHAYQUEBORRARESTO {
     private static List<Matchmake> matchmakings = new ArrayList<>();
 
     //Esta clase después hay que borrarla
-
+    /*
     private static boolean playerExists(String name, List<Player> players){
         boolean exists = false;
         int i =0;
@@ -130,4 +130,5 @@ public class CommandsHAYQUEBORRARESTO {
         }
         return player;
     }
+    */
 }

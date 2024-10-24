@@ -1,12 +1,13 @@
 package Classes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team implements Participants{
     private final String name;
     private final Administrator creatorUser;
-    private List<Player> playersTeam;
-    private List<Tournament> tournamentsRegistered;
+    private List<Player> playersTeam = new ArrayList<>();
+    private List<Tournament> tournamentsRegistered = new ArrayList<>();
 
     public Team(String name, Administrator creatorUser){
         this.name=name;
@@ -15,6 +16,14 @@ public class Team implements Participants{
 
     public String getName() {
         return name;
+    }
+
+    public double getScore(){
+        double media=0.0;
+        for (int i = 0; i < playersTeam.size(); i++) {
+            media+=playersTeam.get(i).getScore();
+        }
+        return media=media/playersTeam.size();
     }
 
     public List<Player> getPlayersTeam() {
