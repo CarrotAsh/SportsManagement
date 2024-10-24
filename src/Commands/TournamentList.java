@@ -37,7 +37,7 @@ public class TournamentList extends Command{
                 System.out.println("Participantes de " + tournament.getName() + ":");
 
                 List<Participants> aux = new ArrayList<>(tournament.getParticipants());
-                Collections.sort(aux, new Comparator<Participants>() { //ver por qué explota
+                Collections.sort(aux, new Comparator<Participants>() {
                     @Override
                     public int compare(Participants p1, Participants p2) {
                         return Double.compare(p2.getScore(), p1.getScore());
