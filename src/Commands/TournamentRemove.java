@@ -34,6 +34,6 @@ public class TournamentRemove extends Command{
             int r = getPositionInList(tournament.getName(),team.getTournamentsRegistered());
             player.getTournamentsRegistered().remove(r);
         }
-        //Dejar vacia la lista de partidos
+        tournament.getMatchs().clear();
     }
 }
