@@ -28,12 +28,12 @@ public class SettingsDefault {
         OptionsMenu.teams.get(3).getPlayersTeam().add(OptionsMenu.players.get(1));
 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        Tournament tournamentF = new Tournament("Torneo Futbol", LocalDate.parse("22/12/2024", format), LocalDate.parse("24/12/2024", format), "Liga Mayor", "Futbol");
+        Tournament tournamentF = new Tournament("Torneo Futbol", LocalDate.parse("22/12/2024", format), LocalDate.parse("24/12/2024", format), "Liga Mayor", "Futbol", "score");
         tournamentF.getParticipants().add(OptionsMenu.players.get(0));
         tournamentF.getParticipants().add(OptionsMenu.players.get(1));
         tournamentF.getParticipants().add(OptionsMenu.players.get(2));
         tournamentF.getParticipants().add(OptionsMenu.players.get(3));
-        Tournament tournamentB = new Tournament("Torneo Baloncesto", LocalDate.parse("28/12/2024", format), LocalDate.parse("30/12/2024", format), "Liga Menor", "Baloncesto");
+        Tournament tournamentB = new Tournament("Torneo Baloncesto", LocalDate.parse("28/12/2024", format), LocalDate.parse("30/12/2024", format), "Liga Menor", "Baloncesto", "winMatch");
         tournamentB.getParticipants().add(OptionsMenu.players.get(2));
         tournamentB.getParticipants().add(OptionsMenu.players.get(3));
         tournamentB.getParticipants().add(OptionsMenu.teams.get(0));

@@ -41,7 +41,17 @@ public abstract class Command {
             i++;
         }
         return pos;
+    }
 
+    public boolean playerWithMatchInTournament(String name, List<Matchmake> list){
+        if (!list.isEmpty()){
+            for (int i = 0; i < list.size(); i++) {
+                if (name.equals(list.get(i).getMatch()[0]) || name.equals(list.get(i).getMatch()[1])){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public abstract void execute(String[] arguments);

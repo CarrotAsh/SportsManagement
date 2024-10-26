@@ -3,7 +3,7 @@ package Classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player extends User implements Participants{
+public class Player extends User implements Participant {
     private final String name;
     private final String surname;
     private final String DNI;

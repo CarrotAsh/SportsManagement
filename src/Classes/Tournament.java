@@ -10,22 +10,24 @@ public class Tournament implements Nameable{
     private LocalDate endDate;
     private final String league;
     private final String sport;
-    private List<Participants> participants = new ArrayList<>();
+    private final String category;
+    private List<Participant> participants = new ArrayList<>();
     private List<Matchmake> matchs = new ArrayList<>();
 
-    public Tournament(String name, LocalDate startDate, LocalDate endDate, String league, String sport){
+    public Tournament(String name, LocalDate startDate, LocalDate endDate, String league, String sport, String category){
         this.name=name;
         this.startDate=startDate;
         this.endDate=endDate;
         this.league=league;
         this.sport=sport;
+        this.category=category;
     }
 
     public String getName() {
         return name;
     }
 
-    public List<Participants> getParticipants() {
+    public List<Participant> getParticipants() {
         return participants;
     }
 

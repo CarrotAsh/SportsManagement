@@ -3,7 +3,7 @@ package Classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team implements Participants{
+public class Team implements Participant {
     private final String name;
     private final Administrator creatorUser;
     private List<Player> playersTeam = new ArrayList<>();

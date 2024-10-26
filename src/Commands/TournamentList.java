@@ -36,10 +36,10 @@ public class TournamentList extends Command{
                 Tournament tournament = OptionsMenu.tournaments.get(i);
                 System.out.println("Participantes de " + tournament.getName() + ":");
 
-                List<Participants> aux = new ArrayList<>(tournament.getParticipants());
-                Collections.sort(aux, new Comparator<Participants>() {
+                List<Participant> aux = new ArrayList<>(tournament.getParticipants());
+                Collections.sort(aux, new Comparator<Participant>() {
                     @Override
-                    public int compare(Participants p1, Participants p2) {
+                    public int compare(Participant p1, Participant p2) {
                         return Double.compare(p2.getScore(), p1.getScore());
                     }
                 });

@@ -2,10 +2,14 @@ package Classes;
 
 public class Matchmake {
 
-    private Participants[] match = new Participants[2];
+    private Participant[] match = new Participant[2];
 
-    public Participants[] getMatch() {
+    public Participant[] getMatch() {
         return match;
+    }
+
+    public void addParticipant(Participant participant, int p){
+        match[p]=participant;
     }
 
     public String toString() {
