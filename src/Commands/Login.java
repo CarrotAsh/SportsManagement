@@ -30,5 +30,8 @@ public class Login extends Command{
             }
             i++;
         }
+        if (!found){
+            System.out.println("Error de login");
+        }
     }
 }
