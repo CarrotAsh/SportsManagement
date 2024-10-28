@@ -37,10 +37,6 @@ public class Player extends User implements Participant {
         return score;
     }
 
-    public void setScore(double score) {
-        this.score = score;
-    }
-
     public double getWinMatch() {
         return winMatch;
     }

@@ -23,7 +23,39 @@ public class Team implements Participant {
         for (int i = 0; i < playersTeam.size(); i++) {
             media+=playersTeam.get(i).getScore();
         }
-        return media=media/playersTeam.size();
+        return media/playersTeam.size();
+    }
+
+    public double getWinMatch(){
+        double media=0.0;
+        for (int i = 0; i < playersTeam.size(); i++) {
+            media+=playersTeam.get(i).getWinMatch();
+        }
+        return media/playersTeam.size();
+    }
+
+    public double getAssistScore(){
+        double media=0.0;
+        for (int i = 0; i < playersTeam.size(); i++) {
+            media+=playersTeam.get(i).getAssistScore();
+        }
+        return media/playersTeam.size();
+    }
+
+    public double getTournamentsWin(){
+        double media=0.0;
+        for (int i = 0; i < playersTeam.size(); i++) {
+            media+=playersTeam.get(i).getTournamentsWin();
+        }
+        return media/playersTeam.size();
+    }
+
+    public double getMoneyWin() {
+        double media=0.0;
+        for (int i = 0; i < playersTeam.size(); i++) {
+            media+=playersTeam.get(i).getMoneyWin();
+        }
+        return media/playersTeam.size();
     }
 
     public List<Player> getPlayersTeam() {

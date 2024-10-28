@@ -27,6 +27,10 @@ public class Tournament implements Nameable{
         return name;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public List<Participant> getParticipants() {
         return participants;
     }
@@ -51,7 +55,6 @@ public class Tournament implements Nameable{
         if (today.isAfter(endDate)){
             isFinish=true;
         }
-
         return isFinish;
     }
 }

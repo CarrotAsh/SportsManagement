@@ -40,7 +40,18 @@ public class TournamentList extends Command{
                 Collections.sort(aux, new Comparator<Participant>() {
                     @Override
                     public int compare(Participant p1, Participant p2) {
-                        return Double.compare(p2.getScore(), p1.getScore());
+                        switch (tournament.getCategory()){
+                            case "winMatch":
+                                return Double.compare(p2.getWinMatch(), p1.getWinMatch());
+                            case "assistScore":
+                                return Double.compare(p2.getAssistScore(), p1.getAssistScore());
+                            case "tournamentsWin":
+                                return Double.compare(p2.getTournamentsWin(), p1.getTournamentsWin());
+                            case "moneyWin":
+                                return Double.compare(p2.getMoneyWin(), p1.getMoneyWin());
+                            default:
+                                return Double.compare(p2.getScore(), p1.getScore());
+                        }
                     }
                 });
 
