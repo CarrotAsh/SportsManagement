@@ -7,7 +7,7 @@ import Classes.Team;
 public class TeamCreate extends Command{
 
     public TeamCreate() {
-        super("team-creates");
+        super("team-create");
     }
 
 
