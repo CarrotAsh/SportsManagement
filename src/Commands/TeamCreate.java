@@ -1,7 +1,6 @@
 package Commands;
 import Classes.Administrator;
-import Classes.OptionsMenu;
-import Classes.Player;
+import Options.OptionsMenu;
 import Classes.Team;
 
 public class TeamCreate extends Command{

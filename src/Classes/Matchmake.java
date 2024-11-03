@@ -1,5 +1,7 @@
 package Classes;
 
+import Interfaces.Participant;
+
 public class Matchmake {
 
     private Participant[] match = new Participant[2];

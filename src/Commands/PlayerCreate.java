@@ -1,6 +1,6 @@
 package Commands;
 import Classes.Administrator;
-import Classes.OptionsMenu;
+import Options.OptionsMenu;
 import Classes.Player;
 
 public class PlayerCreate extends Command{

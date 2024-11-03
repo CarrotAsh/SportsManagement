@@ -1,10 +1,13 @@
 package Classes;
 
+import Interfaces.Nameable;
+import Interfaces.Participant;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tournament implements Nameable{
+public class Tournament implements Nameable {
     private final String name;
     private LocalDate startDate;
     private LocalDate endDate;

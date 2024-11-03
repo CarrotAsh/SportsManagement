@@ -1,11 +1,9 @@
 package Commands;
 
 import Classes.*;
+import Interfaces.Nameable;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.function.Predicate;
 
 public abstract class Command {
     private final String name;

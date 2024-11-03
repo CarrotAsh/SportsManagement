@@ -1,6 +1,6 @@
 package Commands;
 
-import Classes.OptionsMenu;
+import Options.OptionsMenu;
 import Classes.User;
 
 import java.util.ArrayList;

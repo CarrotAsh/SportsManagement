@@ -1,6 +1,6 @@
 package Commands;
 
-import Classes.OptionsMenu;
+import Options.OptionsMenu;
 
 public class Logout extends Command{
     public Logout() {

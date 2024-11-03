@@ -1,7 +1,7 @@
 package Commands;
 
 import Classes.Administrator;
-import Classes.OptionsMenu;
+import Options.OptionsMenu;
 
 public class TournamentDelete extends Command{
     public TournamentDelete() {

@@ -1,6 +1,9 @@
-package Classes;
+package Options;
 
+import Classes.*;
 import Commands.*;
+import Options.SettingsDefault;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

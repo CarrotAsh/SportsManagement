@@ -1,5 +1,6 @@
-package Classes;
+package Options;
 
+import Classes.*;
 import Commands.*;
 
 import java.time.LocalDate;

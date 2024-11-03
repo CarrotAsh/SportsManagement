@@ -1,7 +1,7 @@
 package Commands;
 
 import Classes.Administrator;
-import Classes.OptionsMenu;
+import Options.OptionsMenu;
 import Classes.Player;
 
 public class TeamRemove extends Command{

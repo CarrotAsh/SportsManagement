@@ -1,6 +1,8 @@
-package Classes;
+package Interfaces;
 
-public interface Participant extends Nameable{
+import Interfaces.Nameable;
+
+public interface Participant extends Nameable {
     double getScore();
     double getWinMatch();
     double getAssistScore();

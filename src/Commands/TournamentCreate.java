@@ -1,7 +1,7 @@
 package Commands;
 
 import Classes.Administrator;
-import Classes.OptionsMenu;
+import Options.OptionsMenu;
 import Classes.Tournament;
 
 import java.time.LocalDate;
