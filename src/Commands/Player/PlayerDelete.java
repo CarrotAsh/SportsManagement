@@ -1,11 +1,12 @@
-package Commands;
+package Commands.Player;
 
 import Classes.Administrator;
+import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Player;
 import Classes.Team;
 
-public class PlayerDelete extends Command{
+public class PlayerDelete extends Command {
     public PlayerDelete() {
         super("player-delete");
     }

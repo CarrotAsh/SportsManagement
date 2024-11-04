@@ -1,6 +1,7 @@
-package Commands;
+package Commands.Tournament;
 
 import Classes.*;
+import Commands.Command;
 import Interfaces.Participant;
 import Options.OptionsMenu;
 
@@ -8,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class TournamentMatchmaking extends Command{
+public class TournamentMatchmaking extends Command {
     public TournamentMatchmaking() {
         super("tournament-matchmaking");
     }

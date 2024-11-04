@@ -1,11 +1,12 @@
-package Commands;
+package Commands.Tournament;
 
+import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Player;
 import Classes.Team;
 import Classes.Tournament;
 
-public class TournamentRemove extends Command{
+public class TournamentRemove extends Command {
     public TournamentRemove() {
         super("tournament-remove");
     }

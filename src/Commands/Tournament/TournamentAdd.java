@@ -1,9 +1,10 @@
-package Commands;
+package Commands.Tournament;
 
 import Classes.*;
+import Commands.Command;
 import Options.OptionsMenu;
 
-public class TournamentAdd extends Command{
+public class TournamentAdd extends Command {
     public TournamentAdd() {
         super("tournament-add");
     }
