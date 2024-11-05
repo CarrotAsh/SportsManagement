@@ -13,8 +13,7 @@ public class TeamCreate extends Command{
     @Override
     public void execute(String[] arguments) {
         assert OptionsMenu.loggedUser instanceof Administrator;
-        assert arguments.length==2;
-        assert !existInList(arguments[1], OptionsMenu.teams);
+        assert arguments.length==2 && !existInList(arguments[1], OptionsMenu.teams);
         Team team = new Team(arguments[1], new Administrator(OptionsMenu.loggedUser.getUserName(),OptionsMenu.loggedUser.getPassword()));
         OptionsMenu.teams.add(team);
     }

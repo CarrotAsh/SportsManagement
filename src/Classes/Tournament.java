@@ -9,8 +9,8 @@ import java.util.List;
 
 public class Tournament implements Nameable {
     private final String name;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
     private final String league;
     private final String sport;
     private final String category;

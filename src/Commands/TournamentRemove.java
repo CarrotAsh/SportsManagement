@@ -32,7 +32,7 @@ public class TournamentRemove extends Command{
             int t = getPositionInList(team.getName(), tournament.getParticipants());
             tournament.getParticipants().remove(t);
             int r = getPositionInList(tournament.getName(),team.getTournamentsRegistered());
-            player.getTournamentsRegistered().remove(r);
+            team.getTournamentsRegistered().remove(r);
         }
         tournament.getMatchs().clear();
     }

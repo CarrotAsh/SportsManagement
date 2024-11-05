@@ -20,8 +20,7 @@ public class TournamentMatchmaking extends Command{
         arguments=arguments[1].split(";");
         assert arguments.length==2;
         Tournament tournament = OptionsMenu.tournaments.get(getPositionInList(arguments[1], OptionsMenu.tournaments));
-        assert tournament.inProgress();
-        assert tournament.getParticipants().size()%2==0;
+        assert tournament.inProgress() && tournament.getParticipants().size()%2==0;
 
         if (arguments[0].equals("-m")){
             System.out.println("Participantes del torneo:");
@@ -34,8 +33,7 @@ public class TournamentMatchmaking extends Command{
                 System.out.println("Introduce emparejamiento: ");
                 String line = scanner.nextLine();
                 String[] arg = line.split(";");
-                assert arg.length==2;
-                assert !playerWithMatchInTournament(arg[0], tournament.getMatchs()) && !playerWithMatchInTournament(arg[0], tournament.getMatchs());
+                assert arg.length==2 && !playerWithMatchInTournament(arg[0], tournament.getMatchs()) && !playerWithMatchInTournament(arg[0], tournament.getMatchs());
                 Matchmake match = new Matchmake();
                 match.addParticipant(tournament.getParticipants().get(getPositionInList(arg[0], tournament.getParticipants())) , 0);
                 match.addParticipant(tournament.getParticipants().get(getPositionInList(arg[1], tournament.getParticipants())), 1);

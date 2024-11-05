@@ -26,12 +26,9 @@ public class TournamentAdd extends Command{
         }else{
             int j = getPositionInList(arguments[1], OptionsMenu.teams);
             Team team= OptionsMenu.teams.get(j);
-            assert player.getTeam().equals(team.getName());
-            assert !existInList(team.getName(), tournament.getParticipants());
+            assert player.getTeam().equals(team.getName()) && !existInList(team.getName(), tournament.getParticipants());
             tournament.getParticipants().add(team);
             team.getTournamentsRegistered().add(tournament);
-
         }
-
     }
 }

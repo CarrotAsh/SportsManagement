@@ -2,7 +2,6 @@ package Options;
 
 import Classes.*;
 import Commands.*;
-import Options.SettingsDefault;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +9,8 @@ import java.util.Scanner;
 
 public class OptionsMenu {
 
-    public static List<Player> players = new ArrayList<>();
     public static List<Administrator> administrators = new ArrayList<>();
+    public static List<Player> players = new ArrayList<>();
     public static List<Team> teams = new ArrayList<>();
     public static List<Tournament> tournaments = new ArrayList<>();
     public static List<Command> commands = new ArrayList<>();
@@ -35,7 +34,7 @@ public class OptionsMenu {
                 }
             }
 
-            if (!correct){
+            if (!correct && !input[0].equalsIgnoreCase("close")){
                 System.out.println("Comando incorrecto");
             }
 

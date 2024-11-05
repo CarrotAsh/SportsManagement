@@ -17,9 +17,8 @@ public class TournamentCreate extends Command{
     public void execute(String[] arguments) {
         assert OptionsMenu.loggedUser instanceof Administrator;
         assert arguments.length==2;
-        arguments = arguments[1].split(";");
-        assert arguments.length==6; //name;startDate;endDate;league;sport;category
-        assert !existInList(arguments[0], OptionsMenu.tournaments);
+        arguments = arguments[1].split(";"); //name;startDate;endDate;league;sport;category
+        assert arguments.length==6 && !existInList(arguments[0], OptionsMenu.tournaments);
 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try{

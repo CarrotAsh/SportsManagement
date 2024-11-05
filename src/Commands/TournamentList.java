@@ -36,7 +36,7 @@ public class TournamentList extends Command{
             }
             for (int i = 0; i < OptionsMenu.tournaments.size(); i++) {
                 Tournament tournament = OptionsMenu.tournaments.get(i);
-                System.out.println("Participantes de " + tournament.getName() + ":");
+                System.out.println("Participantes de " + tournament.getName() + ": (ordenados por " + tournament.getCategory()+")");
 
                 List<Participant> aux = new ArrayList<>(tournament.getParticipants());
                 Collections.sort(aux, new Comparator<Participant>() {
@@ -61,8 +61,6 @@ public class TournamentList extends Command{
                     System.out.println(aux.get(j).getName() + " " + aux.get(j).getScore());
                 }
             }
-
         }
-
     }
 }
