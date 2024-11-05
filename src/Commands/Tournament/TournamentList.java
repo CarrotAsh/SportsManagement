@@ -1,6 +1,7 @@
-package Commands;
+package Commands.Tournament;
 
 import Classes.*;
+import Commands.Command;
 import Interfaces.Participant;
 import Options.OptionsMenu;
 
@@ -9,7 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class TournamentList extends Command{
+public class TournamentList extends Command {
 
     public TournamentList() {
         super("tournament-list");

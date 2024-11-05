@@ -1,6 +1,7 @@
-package Commands;
+package Commands.Tournament;
 
 import Classes.Administrator;
+import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Tournament;
 
@@ -8,7 +9,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 
-public class TournamentCreate extends Command{
+public class TournamentCreate extends Command {
     public TournamentCreate() {
         super("tournament-create");
     }

@@ -1,11 +1,12 @@
-package Commands;
+package Commands.Team;
 
 import Classes.Administrator;
+import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Player;
 import Classes.Team;
 
-public class TeamAdd extends Command{
+public class TeamAdd extends Command {
     public TeamAdd() {
         super("team-add");
     }

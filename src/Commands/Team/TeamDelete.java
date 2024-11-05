@@ -1,10 +1,11 @@
-package Commands;
+package Commands.Team;
 
 import Classes.Administrator;
+import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Team;
 
-public class TeamDelete extends Command{
+public class TeamDelete extends Command {
     public TeamDelete() {
         super("team-delete");
     }

@@ -1,9 +1,10 @@
-package Commands;
+package Commands.Player;
 import Classes.Administrator;
+import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Player;
 
-public class PlayerCreate extends Command{
+public class PlayerCreate extends Command {
 
     public PlayerCreate() {
         super("player-create");
