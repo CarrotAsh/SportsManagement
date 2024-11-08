@@ -1,7 +1,6 @@
-package Commands.Tournament;
+package Commands;
 
 import Classes.*;
-import Commands.Command;
 import Interfaces.Participant;
 import Options.OptionsMenu;
 

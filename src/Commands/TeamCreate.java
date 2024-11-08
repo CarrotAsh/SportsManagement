@@ -1,6 +1,5 @@
-package Commands.Team;
+package Commands;
 import Classes.Administrator;
-import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Team;
 

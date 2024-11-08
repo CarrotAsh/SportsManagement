@@ -2,13 +2,12 @@ package Options;
 
 import Classes.*;
 import Commands.*;
-import Commands.Player.PlayerCreate;
-import Commands.Player.PlayerDelete;
-import Commands.Team.TeamAdd;
-import Commands.Team.TeamCreate;
-import Commands.Team.TeamDelete;
-import Commands.Team.TeamRemove;
-import Commands.Tournament.*;
+import Commands.PlayerCreate;
+import Commands.PlayerDelete;
+import Commands.TeamAdd;
+import Commands.TeamCreate;
+import Commands.TeamDelete;
+import Commands.TeamRemove;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

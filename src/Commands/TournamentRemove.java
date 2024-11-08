@@ -1,6 +1,5 @@
-package Commands.Tournament;
+package Commands;
 
-import Commands.Command;
 import Options.OptionsMenu;
 import Classes.Player;
 import Classes.Team;
