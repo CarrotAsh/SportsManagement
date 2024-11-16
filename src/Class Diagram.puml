@@ -1,0 +1,16 @@
+@startuml
+
+class tournament
+class matchmake
+class team
+class user
+class adminitrador
+
+tournament *-down-> team
+team *-down-> user
+user <|.down. adminitrador
+tournament -down-> matchmake
+matchmake -down-> team
+matchmake -down-> user
+
+@enduml
