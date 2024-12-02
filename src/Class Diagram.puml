@@ -1,16 +1,55 @@
 @startuml
 
-class tournament
-class matchmake
-class team
-class user
-class adminitrador
+class tournament{
+
+
+}
+
+class player{
+   + PlayerCreate()
+   + PlayerDelete()
+   + getName()
+   + getScore()
+   +
+   - String name
+   - String surname
+   - String DNI
+   - Double score
+   - Double withMatch
+   - Double assistScore
+   - Double tournamentsWin
+   - Double moneyWin
+   - Administratos Administrator creatorUser
+   - Team team
+   - List<Tournament> tournamentsRegistered
+}
+
+class matchmake{
+
+
+}
+
+class team{
+
+
+}
+
+class user{
+
+
+}
+
+class adminitrador{
+
+
+}
 
 tournament *-down-> team
-team *-down-> user
-user <|.down. adminitrador
+team *-down-> player
+player -down-> user
 tournament -down-> matchmake
 matchmake -down-> team
-matchmake -down-> user
+matchmake -down-> player
+user <|.down. adminitrador
 
 @enduml
