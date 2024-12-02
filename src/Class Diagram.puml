@@ -10,7 +10,7 @@ class player{
    + PlayerDelete()
    + getName()
    + getScore()
-   +
+   + getWinMatch()
    - String name
    - String surname
    - String DNI
@@ -19,7 +19,7 @@ class player{
    - Double assistScore
    - Double tournamentsWin
    - Double moneyWin
-   - Administratos Administrator creatorUser
+   - Administrator Administrator creatorUser
    - Team team
    - List<Tournament> tournamentsRegistered
 }
@@ -39,7 +39,7 @@ class user{
 
 }
 
-class adminitrador{
+class administrator{
 
 
 }
@@ -50,6 +50,6 @@ player -down-> user
 tournament -down-> matchmake
 matchmake -down-> team
 matchmake -down-> player
-user <|.down. adminitrador
+user <|.down. administrator
 
 @enduml
