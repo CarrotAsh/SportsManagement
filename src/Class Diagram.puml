@@ -1,11 +1,38 @@
 @startuml
 
 class Tournament{
-
-
+    - String name;
+    - LocalDate startDate;
+    - LocalDate endDate;
+    - String league;
+    - String sport;
+    - String category;
+    - List<Participant> participants = new ArrayList<>();
+    - List<Matchmake> matchs = new ArrayList<>();
+    + getName()
+    + getCategory()
+    + getParticipants()
+    + List<Matchmake>
+    + inProgress()
+    + isFinish()
+    + TournamentAdd()
+    + Tournament
+    + Tournament
+    + Tournament
+    + Tournament
+    + Tournament
 }
 
 class Player{
+   - String name
+   - String surname
+   - String DNI
+   - String team
+   - Double score
+   - Double withMatch
+   - Double assistScore
+   - Double tournamentsWin
+   - Double moneyWin
    + PlayerCreate()
    + PlayerDelete()
    + getName()
@@ -14,14 +41,6 @@ class Player{
    + getAssistScore()
    + getTournamentsWin()
    + getMoneyWin()
-   - String name
-   - String surname
-   - String DNI
-   - Double score
-   - Double withMatch
-   - Double assistScore
-   - Double tournamentsWin
-   - Double moneyWin
 }
 
 class Matchmake{
