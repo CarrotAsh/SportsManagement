@@ -41,15 +41,15 @@ public abstract class Command {
         return pos;
     }
 
-    protected boolean playerWithMatchInTournament(String name, List<Matchmake> list){
+    protected boolean withoutMatchInTournament(String name, List<Matchmake> list){
         if (!list.isEmpty()){
-            for (int i = 0; i < list.size(); i++) {
-                if (name.equals(list.get(i).getMatch()[0]) || name.equals(list.get(i).getMatch()[1])){
-                    return true;
+            for (Matchmake matchmake : list) {
+                if (name.equals(matchmake.getMatch()[0].getName()) || name.equals(matchmake.getMatch()[1].getName())) {
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public abstract void execute(String[] arguments);

@@ -57,8 +57,8 @@ public class TournamentList extends Command {
                     }
                 });
 
-                for (int j = 0; j < aux.size(); j++) {
-                    System.out.println(aux.get(j).getName() + " " + aux.get(j).getScore());
+                for (Participant participant : aux) {
+                    System.out.println(participant.getName() + " " + participant.getScore());
                 }
             }
         }

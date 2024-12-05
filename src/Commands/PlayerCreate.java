@@ -19,7 +19,7 @@ public class PlayerCreate extends Command {
 
         try {
 
-            Player player = new Player(arguments[0],arguments[1],arguments[2], arguments[3],arguments[4],Double.parseDouble(arguments[5]), Double.parseDouble(arguments[6]), Double.parseDouble(arguments[7]), Double.parseDouble(arguments[8]), Double.parseDouble(arguments[9]), new Administrator(OptionsMenu.loggedUser.getUserName(),OptionsMenu.loggedUser.getPassword()));
+            Player player = new Player(arguments[0],arguments[1],arguments[2], arguments[3],arguments[4],Double.parseDouble(arguments[5]), Double.parseDouble(arguments[6]), Double.parseDouble(arguments[7]), Double.parseDouble(arguments[8]), Double.parseDouble(arguments[9]));
             OptionsMenu.players.add(player);
 
         }catch (Exception e){
