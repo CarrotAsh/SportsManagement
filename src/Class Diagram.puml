@@ -1,16 +1,19 @@
 @startuml
 
-class tournament{
+class Tournament{
 
 
 }
 
-class player{
+class Player{
    + PlayerCreate()
    + PlayerDelete()
    + getName()
    + getScore()
    + getWinMatch()
+   + getAssistScore()
+   + getTournamentsWin()
+   + getMoneyWin()
    - String name
    - String surname
    - String DNI
@@ -19,37 +22,37 @@ class player{
    - Double assistScore
    - Double tournamentsWin
    - Double moneyWin
-   - Administrator Administrator creatorUser
-   - Team team
-   - List<Tournament> tournamentsRegistered
 }
 
-class matchmake{
+class Matchmake{
 
 
 }
 
-class team{
+class Team{
+    + TeamAdd()
+    + TeamRemove()
+    + TeamCreate()
+    + TeamDelete()
+    -
+}
+
+class User{
 
 
 }
 
-class user{
+class Administrator{
 
 
 }
 
-class administrator{
-
-
-}
-
-tournament *-down-> team
-team *-down-> player
-player -down-> user
-tournament -down-> matchmake
-matchmake -down-> team
-matchmake -down-> player
-user <|.down. administrator
+Tournament *-down-> Team
+Team *-down-> Player
+Player -down-> User
+Tournament -down-> Matchmake
+Matchmake -down-> Team
+Matchmake -down-> Player
+User <|.down. Administrator
 
 @enduml
