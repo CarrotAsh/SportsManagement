@@ -7,20 +7,20 @@ class Tournament{
     - String league;
     - String sport;
     - String category;
-    - List<Participant> participants = new ArrayList<>();
-    - List<Matchmake> matchs = new ArrayList<>();
+    - List<Participant> participants
+    - List<Matchmake> matchs
     + getName()
     + getCategory()
     + getParticipants()
-    + List<Matchmake>
+    + getMatchs()
     + inProgress()
     + isFinish()
     + TournamentAdd()
-    + Tournament
-    + Tournament
-    + Tournament
-    + Tournament
-    + Tournament
+    + TournamentCreate()
+    + TournamentDelete()
+    + TournamentList()
+    + TournamentMatchmaking()
+    + TournamentRemove()
 }
 
 class Player{
@@ -41,10 +41,14 @@ class Player{
    + getAssistScore()
    + getTournamentsWin()
    + getMoneyWin()
+   + toString()
 }
 
 class Matchmake{
-
+    - Participant[] match
+    + getMatch()
+    + addParticipant(Participant participant, int p)
+    + toString()
 
 }
 
@@ -57,12 +61,15 @@ class Team{
 }
 
 class User{
-
-
+    - String userName
+    - String password
+    + User(String userName,String password)
+    + getUserName()
+    + getPassword()
 }
 
 class Administrator{
-
+    + Administrator(String userName, String password)
 
 }
 
