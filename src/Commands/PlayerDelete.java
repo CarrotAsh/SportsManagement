@@ -26,7 +26,7 @@ public class PlayerDelete extends Command {
         }
 
         if (player.getTeam()!=null && !active){
-            Team team = player.getTeam();
+            Team team = OptionsMenu.teams.get(getPositionInList(player.getTeam(), OptionsMenu.teams));
             int m=0;
             while (!active && m<team.getTournamentsRegistered().size()){
                 if (team.getTournamentsRegistered().get(m).inProgress()){

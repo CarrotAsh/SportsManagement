@@ -20,6 +20,6 @@ public class TeamAdd extends Command {
         assert player.getTeam()==null;
         Team team = OptionsMenu.teams.get(getPositionInList(arguments[1],OptionsMenu.teams));
         team.getPlayersTeam().add(player);
-        player.setTeam(team);
+        player.setTeam(team.getName());
     }
 }

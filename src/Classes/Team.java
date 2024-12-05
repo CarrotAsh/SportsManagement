@@ -7,13 +7,11 @@ import java.util.List;
 
 public class Team implements Participant {
     private final String name;
-    private final Administrator creatorUser;
-    private List<Player> playersTeam = new ArrayList<>();
-    private List<Tournament> tournamentsRegistered = new ArrayList<>();
+    private final List<Player> playersTeam = new ArrayList<>();
+    private final List<Tournament> tournamentsRegistered = new ArrayList<>();
 
-    public Team(String name, Administrator creatorUser){
+    public Team(String name){
         this.name=name;
-        this.creatorUser=creatorUser;
     }
 
     public String getName() {
@@ -22,40 +20,40 @@ public class Team implements Participant {
 
     public double getScore(){
         double score=0.0;
-        for (int i = 0; i < playersTeam.size(); i++) {
-            score+=playersTeam.get(i).getScore();
+        for (Player player : playersTeam) {
+            score += player.getScore();
         }
         return score/playersTeam.size();
     }
 
     public double getWinMatch(){
         double winMatch=0.0;
-        for (int i = 0; i < playersTeam.size(); i++) {
-            winMatch+=playersTeam.get(i).getWinMatch();
+        for (Player player : playersTeam) {
+            winMatch += player.getWinMatch();
         }
         return winMatch/playersTeam.size();
     }
 
     public double getAssistScore(){
         double assistScore=0.0;
-        for (int i = 0; i < playersTeam.size(); i++) {
-            assistScore+=playersTeam.get(i).getAssistScore();
+        for (Player player : playersTeam) {
+            assistScore += player.getAssistScore();
         }
         return assistScore/playersTeam.size();
     }
 
     public double getTournamentsWin(){
         double tournamentsWin=0.0;
-        for (int i = 0; i < playersTeam.size(); i++) {
-            tournamentsWin+=playersTeam.get(i).getTournamentsWin();
+        for (Player player : playersTeam) {
+            tournamentsWin += player.getTournamentsWin();
         }
         return tournamentsWin/playersTeam.size();
     }
 
     public double getMoneyWin() {
         double moneyWin=0.0;
-        for (int i = 0; i < playersTeam.size(); i++) {
-            moneyWin+=playersTeam.get(i).getMoneyWin();
+        for (Player player : playersTeam) {
+            moneyWin += player.getMoneyWin();
         }
         return moneyWin/playersTeam.size();
     }

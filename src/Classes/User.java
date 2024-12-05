@@ -2,7 +2,7 @@ package Classes;
 
 public abstract class User {
     private final String userName;
-    private String password;
+    private final String password;
 
     public User(String userName,String password){
         this.userName=userName;

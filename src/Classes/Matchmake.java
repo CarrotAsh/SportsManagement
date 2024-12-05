@@ -4,7 +4,7 @@ import Interfaces.Participant;
 
 public class Matchmake {
 
-    private Participant[] match = new Participant[2];
+    private final Participant[] match = new Participant[2];
 
     public Participant[] getMatch() {
         return match;

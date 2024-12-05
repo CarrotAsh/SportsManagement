@@ -14,11 +14,10 @@ public class Player extends User implements Participant {
     private double assistScore;
     private double tournamentsWin;
     private double moneyWin;
-    private final Administrator creatorUser;
-    private Team team = null;
-    private List<Tournament> tournamentsRegistered = new ArrayList<>();
+    private String team = null;
+    private final List<Tournament> tournamentsRegistered = new ArrayList<>();
 
-    public Player(String userName, String password, String name, String surname, String DNI, double score, double winMatch, double assistScore, double tournamentsWin, double moneyWin, Administrator creatorUser) {
+    public Player(String userName, String password, String name, String surname, String DNI, double score, double winMatch, double assistScore, double tournamentsWin, double moneyWin) {
         super(userName, password);
         this.name = name;
         this.surname = surname;
@@ -28,7 +27,6 @@ public class Player extends User implements Participant {
         this.assistScore=assistScore;
         this.tournamentsWin=tournamentsWin;
         this.moneyWin=moneyWin;
-        this.creatorUser=creatorUser;
     }
 
     public String getName() {
@@ -55,11 +53,11 @@ public class Player extends User implements Participant {
         return moneyWin;
     }
 
-    public Team getTeam() {
+    public String getTeam() {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void setTeam(String team) {
         this.team = team;
     }
 

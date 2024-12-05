@@ -14,8 +14,8 @@ public class Tournament implements Nameable {
     private final String league;
     private final String sport;
     private final String category;
-    private List<Participant> participants = new ArrayList<>();
-    private List<Matchmake> matchs = new ArrayList<>();
+    private final List<Participant> participants = new ArrayList<>();
+    private final List<Matchmake> matchs = new ArrayList<>();
 
     public Tournament(String name, LocalDate startDate, LocalDate endDate, String league, String sport, String category){
         this.name=name;
@@ -43,7 +43,7 @@ public class Tournament implements Nameable {
     }
 
     public boolean inProgress(){
-        Boolean inProgress=false;
+        boolean inProgress=false;
         LocalDate today = LocalDate.now();
         if (today.isEqual(startDate) || today.isEqual(endDate) || (today.isAfter(startDate) && today.isBefore(endDate)) ){
             inProgress=true;
@@ -53,7 +53,7 @@ public class Tournament implements Nameable {
     }
 
     public boolean isFinish(){
-        Boolean isFinish=false;
+        boolean isFinish=false;
         LocalDate today = LocalDate.now();
         if (today.isAfter(endDate)){
             isFinish=true;
