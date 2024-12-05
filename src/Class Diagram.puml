@@ -1,0 +1,55 @@
+@startuml
+
+class tournament{
+
+
+}
+
+class player{
+   + PlayerCreate()
+   + PlayerDelete()
+   + getName()
+   + getScore()
+   + getWinMatch()
+   - String name
+   - String surname
+   - String DNI
+   - Double score
+   - Double withMatch
+   - Double assistScore
+   - Double tournamentsWin
+   - Double moneyWin
+   - Administrator Administrator creatorUser
+   - Team team
+   - List<Tournament> tournamentsRegistered
+}
+
+class matchmake{
+
+
+}
+
+class team{
+
+
+}
+
+class user{
+
+
+}
+
+class administrator{
+
+
+}
+
+tournament *-down-> team
+team *-down-> player
+player -down-> user
+tournament -down-> matchmake
+matchmake -down-> team
+matchmake -down-> player
+user <|.down. administrator
+
+@enduml
