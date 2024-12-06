@@ -15,12 +15,12 @@ class Tournament{
     + getMatchs()
     + inProgress()
     + isFinish()
-    + TournamentAdd()
-    + TournamentCreate()
-    + TournamentDelete()
-    + TournamentList()
-    + TournamentMatchmaking()
-    + TournamentRemove()
+    + TournamentAdd(String[] arguments)
+    + TournamentCreate(String[] arguments)
+    + TournamentDelete(String[] arguments)
+    + TournamentList(String[] arguments)
+    + TournamentMatchmaking(String[] arguments)
+    + TournamentRemove(String[] arguments)
 }
 
 class Player{
@@ -33,8 +33,8 @@ class Player{
    - Double assistScore
    - Double tournamentsWin
    - Double moneyWin
-   + PlayerCreate()
-   + PlayerDelete()
+   + PlayerCreate(String[] arguments)
+   + PlayerDelete(String[] arguments)
    + getName()
    + getScore()
    + getWinMatch()
@@ -53,11 +53,22 @@ class Matchmake{
 }
 
 class Team{
-    + TeamAdd()
-    + TeamRemove()
-    + TeamCreate()
-    + TeamDelete()
-    -
+    - String name;
+    - List<Player> playersTeam
+    - List<Tournament> tournamentsRegistered
+    + Team(String name)
+    + getName()
+    + getScore()
+    + getWinMatch()
+    + getAssistScore()
+    + getTournamentsWin()
+    + getMoneyWin()
+    + getPlayersTeam()
+    + getTournamentsRegistered()
+    + TeamAdd(String[] arguments)
+    + TeamRemove(String[] arguments)
+    + TeamCreate(String[] arguments)
+    + TeamDelete(String[] arguments)
 }
 
 class User{
@@ -75,10 +86,9 @@ class Administrator{
 
 Tournament *-down-> Team
 Team *-down-> Player
-Player -down-> User
 Tournament -down-> Matchmake
 Matchmake -down-> Team
 Matchmake -down-> Player
-User <|.down. Administrator
-
+Player <|.down. Administrator
+Player <|.down. User
 @enduml
