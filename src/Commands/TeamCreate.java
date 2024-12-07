@@ -12,9 +12,9 @@ public class TeamCreate extends Command {
 
     @Override
     public void execute(String[] arguments) {
-        assert OptionsMenu.loggedUser instanceof Administrator;
-        assert arguments.length==2 && !existInList(arguments[1], OptionsMenu.teams);
+        assert OptionsMenu.getLoggedUser() instanceof Administrator;
+        assert arguments.length==2 && !existInList(arguments[1], OptionsMenu.getTeams());
         Team team = new Team(arguments[1]);
-        OptionsMenu.teams.add(team);
+        OptionsMenu.getTeams().add(team);
     }
 }

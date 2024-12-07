@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class OptionsMenu {
 
-    public static List<Administrator> administrators = new ArrayList<>();
-    public static List<Player> players = new ArrayList<>();
-    public static List<Team> teams = new ArrayList<>();
-    public static List<Tournament> tournaments = new ArrayList<>();
-    public static List<Command> commands = new ArrayList<>();
-    public static User loggedUser = null;
+    private static final List<Administrator> administrators = new ArrayList<>();
+    private static final List<Player> players = new ArrayList<>();
+    private static final List<Team> teams = new ArrayList<>();
+    private static final List<Tournament> tournaments = new ArrayList<>();
+    private static final List<Command> commands = new ArrayList<>();
+    private static User loggedUser = null;
 
     public static void start(){
         Scanner scanner = new Scanner(System.in);
@@ -39,5 +39,33 @@ public class OptionsMenu {
             }
 
         }while (!completeLine.equalsIgnoreCase("close"));
+    }
+
+    public static List<Administrator> getAdministrators() {
+        return administrators;
+    }
+
+    public static List<Player> getPlayers() {
+        return players;
+    }
+
+    public static List<Team> getTeams() {
+        return teams;
+    }
+
+    public static List<Tournament> getTournaments() {
+        return tournaments;
+    }
+
+    public static List<Command> getCommands() {
+        return commands;
+    }
+
+    public static User getLoggedUser() {
+        return loggedUser;
+    }
+
+    public static void setLoggedUser(User loggedUser) {
+        OptionsMenu.loggedUser = loggedUser;
     }
 }

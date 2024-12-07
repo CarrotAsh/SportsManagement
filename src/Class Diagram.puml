@@ -1,95 +1,202 @@
 @startuml
+class SportManagement{
+    + {static} void main(String[] args)
+}
+class OptionsMenu{
+    - {static} List<Administrator> administrators
+    - {static} List<Player> players
+    - {static} List<Team> teams
+    - {static} List<Tournament> tournaments
+    - {static} List<Command> commands
+    - {static} User loggedUser
+    + {static} void start()
+    + {static} List<Administrator> getAdministrators()
+    + {static} List<Player> getPlayers()
+    + {static} List<Team> getTeams()
+    + {static} List<Tournament> getTournaments()
+    + {static} List<Command> getCommands()
+    + {static} User getLoggedUser()
+    + {static} void setLoggedUser(User loggedUser)
+}
+class SettingsDefault{
+    + {static} void loadData()
+}
 
+interface Nameable{
+    + String getName()
+}
+
+interface Participant{
+    + Double getPuntuation(String category)
+}
 class Tournament{
-    - String name;
-    - LocalDate startDate;
-    - LocalDate endDate;
-    - String league;
-    - String sport;
-    - String category;
+    - String name
+    - LocalDate startDate
+    - LocalDate endDate
+    - String category
     - List<Participant> participants
     - List<Matchmake> matchs
-    + getName()
-    + getCategory()
-    + getParticipants()
-    + getMatchs()
-    + inProgress()
-    + isFinish()
-    + TournamentAdd(String[] arguments)
-    + TournamentCreate(String[] arguments)
-    + TournamentDelete(String[] arguments)
-    + TournamentList(String[] arguments)
-    + TournamentMatchmaking(String[] arguments)
-    + TournamentRemove(String[] arguments)
+    + String getName()
+    + String getCategory()
+    + List<Participant> getParticipants()
+    + List<Matchmake> getMatchs()
+    + boolean inProgress()
+    + boolean isFinish()
 }
 
 class Player{
    - String name
-   - String surname
-   - String DNI
+   - HashMap<String, Double> puntuation
    - String team
-   - Double score
-   - Double withMatch
-   - Double assistScore
-   - Double tournamentsWin
-   - Double moneyWin
-   + PlayerCreate(String[] arguments)
-   + PlayerDelete(String[] arguments)
-   + getName()
-   + getScore()
-   + getWinMatch()
-   + getAssistScore()
-   + getTournamentsWin()
-   + getMoneyWin()
-   + toString()
+   - List<Tournament> tournamentsRegistered
+   + String getName()
+   + double getPuntuation(String category)
+   + String getTeam()
+   + void setTeam(String team)
+   + List<Tournament> getTournamentsRegistered()
+   + String toString()
 }
 
 class Matchmake{
     - Participant[] match
-    + getMatch()
-    + addParticipant(Participant participant, int p)
-    + toString()
+    + Participant[] getMatch()
+    + void addParticipant(Participant participant, int p)
+    + void toString()
 }
 
 class Team{
-    - String name;
+    - String name
     - List<Player> playersTeam
     - List<Tournament> tournamentsRegistered
-    + Team(String name)
     + getName()
-    + getScore()
-    + getWinMatch()
-    + getAssistScore()
-    + getTournamentsWin()
-    + getMoneyWin()
+    + getPuntuation()
     + getPlayersTeam()
     + getTournamentsRegistered()
-    + TeamAdd(String[] arguments)
-    + TeamRemove(String[] arguments)
-    + TeamCreate(String[] arguments)
-    + TeamDelete(String[] arguments)
 }
 
 class User{
     - String userName
     - String password
-    + User(String userName,String password)
-    + getUserName()
-    + getPassword()
+    + String getUserName()
+    + String getPassword()
 }
 
 class Administrator{
-    + Administrator(String userName, String password)
-
+    - String userName
+    - String password
 }
 
+class Command{
+    - String name
+    + String getName()
+    # boolean existInList(String name, List<T> list)
+    # int getPositionInList(String name, List<T> list)
+    # boolean withoutMatchInTournament(String name, List<Matchmake> list)
+    {abstract} void execute(String[] arguments)
+}
 
-Tournament *-down-> Team
-Tournament *-down-> Player
-Team *-down-> Player
-Tournament -down-> Matchmake
-Matchmake -down-> Team
-Matchmake -down-> Player
-User <|.down. Administrator
-User <|.down. Player
+class Login{
+    - String name
+    + void execute()
+}
+
+class Logout{
+    - String name
+    + void execute()
+}
+
+class PlayerCreate{
+    - String name
+    + void execute()
+}
+
+class PlayerDelete{
+    - String name
+    + void execute()
+}
+
+class StatisticsShow{
+    - String name
+    + void execute()
+}
+
+class TeamAdd{
+    - String name
+    + void execute()
+}
+
+class TeamCreate{
+    - String name
+    + void execute()
+}
+class TeamDelete{
+    - String name
+    + void execute()
+}
+class TeamRemove{
+    - String name
+    + void execute()
+}
+class TournamentAdd{
+    - String name
+    + void execute()
+}
+class TournamentCreate{
+    - String name
+    + void execute()
+}
+class TournamentDelete{
+    - String name
+    + void execute()
+}
+class TournamentList{
+    - String name
+    + void execute()
+}
+class TournamentMatchMaking{
+    - String name
+    + void execute()
+}
+class TournamentRemove{
+    - String name
+    + void execute()
+}
+SportManagement -right-> OptionsMenu
+OptionsMenu *-down- Administrator
+OptionsMenu *-down- Player
+OptionsMenu *-down- Team
+OptionsMenu *-down- Tournament
+OptionsMenu *-down- Command
+OptionsMenu *-down- User
+OptionsMenu -right-> SettingsDefault
+Nameable <|.down. Tournament
+Nameable <|.down. Participant
+Tournament o-- Participant
+Matchmake o-- Participant
+Team o-- Player
+Participant <|.down. Player
+Participant <|.down. Team
+Tournament *-down- Matchmake
+Player o-- Tournament
+Team o-- Tournament
+User <|-- Administrator
+Nameable <.. Command
+User <|-- Player
+Command <|-- Login
+Command <|-- Logout
+Command <|-- PlayerCreate
+Command <|-- PlayerDelete
+Command <|-- StatisticsShow
+Command <|-- TeamAdd
+Command <|-- TeamCreate
+Command <|-- TeamDelete
+Command <|-- TeamRemove
+Command <|-- TournamentAdd
+Command <|-- TournamentCreate
+Command <|-- TournamentDelete
+Command <|-- TournamentList
+Command <|-- TournamentMatchMaking
+Command <|-- TournamentRemove
+Participant <.. TournamentList
+
 @enduml

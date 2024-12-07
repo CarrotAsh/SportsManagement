@@ -18,44 +18,15 @@ public class Team implements Participant {
         return name;
     }
 
-    public double getScore(){
-        double score=0.0;
+    public double getPuntuation(String category){
+        double media = 0.0;
         for (Player player : playersTeam) {
-            score += player.getScore();
+            media += player.getPuntuation(category);
         }
-        return score/playersTeam.size();
-    }
-
-    public double getWinMatch(){
-        double winMatch=0.0;
-        for (Player player : playersTeam) {
-            winMatch += player.getWinMatch();
+        if (!playersTeam.isEmpty()){
+            media = media/playersTeam.size();
         }
-        return winMatch/playersTeam.size();
-    }
-
-    public double getAssistScore(){
-        double assistScore=0.0;
-        for (Player player : playersTeam) {
-            assistScore += player.getAssistScore();
-        }
-        return assistScore/playersTeam.size();
-    }
-
-    public double getTournamentsWin(){
-        double tournamentsWin=0.0;
-        for (Player player : playersTeam) {
-            tournamentsWin += player.getTournamentsWin();
-        }
-        return tournamentsWin/playersTeam.size();
-    }
-
-    public double getMoneyWin() {
-        double moneyWin=0.0;
-        for (Player player : playersTeam) {
-            moneyWin += player.getMoneyWin();
-        }
-        return moneyWin/playersTeam.size();
+        return media;
     }
 
     public List<Player> getPlayersTeam() {

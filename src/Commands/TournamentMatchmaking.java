@@ -15,11 +15,11 @@ public class TournamentMatchmaking extends Command {
 
     @Override
     public void execute(String[] arguments) {
-        assert OptionsMenu.loggedUser instanceof Administrator;
+        assert OptionsMenu.getLoggedUser() instanceof Administrator;
         assert arguments.length==2; // -m/-a;nameTournament
         arguments=arguments[1].split(";");
         assert arguments.length==2;
-        Tournament tournament = OptionsMenu.tournaments.get(getPositionInList(arguments[1], OptionsMenu.tournaments));
+        Tournament tournament = OptionsMenu.getTournaments().get(getPositionInList(arguments[1], OptionsMenu.getTournaments()));
         assert tournament.inProgress() && tournament.getParticipants().size()%2==0;
 
         if (arguments[0].equals("-m")){

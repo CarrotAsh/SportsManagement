@@ -10,9 +10,9 @@ public class TournamentDelete extends Command {
 
     @Override
     public void execute(String[] arguments) {
-        assert OptionsMenu.loggedUser instanceof Administrator;
+        assert OptionsMenu.getLoggedUser() instanceof Administrator;
         assert arguments.length==2;
-        int i= getPositionInList(arguments[1], OptionsMenu.tournaments);
-        OptionsMenu.tournaments.remove(i);
+        int i= getPositionInList(arguments[1], OptionsMenu.getTournaments());
+        OptionsMenu.getTournaments().remove(i);
     }
 }

@@ -18,14 +18,14 @@ public class Login extends Command{
         assert arguments.length==2; //userName;password
 
         List<User> users = new ArrayList<>();
-        users.addAll(OptionsMenu.administrators);
-        users.addAll(OptionsMenu.players);
+        users.addAll(OptionsMenu.getAdministrators());
+        users.addAll(OptionsMenu.getPlayers());
 
         boolean found = false;
         int i = 0;
         while (!found && i<users.size()){
             if (arguments[0].equalsIgnoreCase(users.get(i).getUserName()) && arguments[1].equalsIgnoreCase(users.get(i).getPassword())){
-                OptionsMenu.loggedUser = users.get(i);
+                OptionsMenu.setLoggedUser(users.get(i));
                 found=true;
             }
             i++;
