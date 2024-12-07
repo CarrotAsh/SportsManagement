@@ -82,8 +82,7 @@ class User{
 }
 
 class Administrator{
-    - String userName
-    - String password
+
 }
 
 class Command{
@@ -96,72 +95,59 @@ class Command{
 }
 
 class Login{
-    - String name
     + void execute()
 }
 
 class Logout{
-    - String name
     + void execute()
 }
 
 class PlayerCreate{
-    - String name
     + void execute()
 }
 
 class PlayerDelete{
-    - String name
     + void execute()
 }
 
 class StatisticsShow{
-    - String name
     + void execute()
 }
 
 class TeamAdd{
-    - String name
     + void execute()
 }
 
 class TeamCreate{
-    - String name
     + void execute()
 }
 class TeamDelete{
-    - String name
     + void execute()
 }
 class TeamRemove{
-    - String name
     + void execute()
 }
 class TournamentAdd{
-    - String name
     + void execute()
 }
 class TournamentCreate{
-    - String name
     + void execute()
 }
 class TournamentDelete{
-    - String name
     + void execute()
 }
 class TournamentList{
-    - String name
     + void execute()
 }
 class TournamentMatchMaking{
-    - String name
     + void execute()
 }
 class TournamentRemove{
-    - String name
     + void execute()
 }
+
 SportManagement -right-> OptionsMenu
+Nameable <|.down. Tournament
 OptionsMenu *-down- Administrator
 OptionsMenu *-down- Player
 OptionsMenu *-down- Team
@@ -169,34 +155,33 @@ OptionsMenu *-down- Tournament
 OptionsMenu *-down- Command
 OptionsMenu *-down- User
 OptionsMenu -right-> SettingsDefault
-Nameable <|.down. Tournament
 Nameable <|.down. Participant
-Tournament o-- Participant
-Matchmake o-- Participant
-Team o-- Player
+Tournament o-down-> Participant
+Matchmake o-down-> Participant
+Team o-down-> Player
 Participant <|.down. Player
 Participant <|.down. Team
 Tournament *-down- Matchmake
-Player o-- Tournament
-Team o-- Tournament
-User <|-- Administrator
-Nameable <.. Command
-User <|-- Player
-Command <|-- Login
-Command <|-- Logout
-Command <|-- PlayerCreate
-Command <|-- PlayerDelete
-Command <|-- StatisticsShow
-Command <|-- TeamAdd
-Command <|-- TeamCreate
-Command <|-- TeamDelete
-Command <|-- TeamRemove
-Command <|-- TournamentAdd
-Command <|-- TournamentCreate
-Command <|-- TournamentDelete
-Command <|-- TournamentList
-Command <|-- TournamentMatchMaking
-Command <|-- TournamentRemove
-Participant <.. TournamentList
+Player o-down-> Tournament
+Team o-down-> Tournament
+User <|-down- Administrator
+Nameable <.down. Command
+User <|-down- Player
+Command <|-down- Login
+Command <|-down- Logout
+Command <|-down- PlayerCreate
+Command <|-down- PlayerDelete
+Command <|-down- StatisticsShow
+Command <|-down- TeamAdd
+Command <|-down- TeamCreate
+Command <|-down- TeamDelete
+Command <|-down- TeamRemove
+Command <|-down- TournamentAdd
+Command <|-down- TournamentCreate
+Command <|-down- TournamentDelete
+Command <|-down- TournamentList
+Command <|-down- TournamentMatchMaking
+Command <|-down- TournamentRemove
+TournamentList .down.> Participant
 
 @enduml
