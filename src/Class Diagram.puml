@@ -49,7 +49,6 @@ class Matchmake{
     + getMatch()
     + addParticipant(Participant participant, int p)
     + toString()
-
 }
 
 class Team{
