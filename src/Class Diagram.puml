@@ -83,11 +83,13 @@ class Administrator{
 
 }
 
+
 Tournament *-down-> Team
+Tournament *-down-> Player
 Team *-down-> Player
 Tournament -down-> Matchmake
 Matchmake -down-> Team
 Matchmake -down-> Player
-Player <|.down. Administrator
-Player <|.down. User
+User <|.down. Administrator
+User <|.down. Player
 @enduml
