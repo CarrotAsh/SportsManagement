@@ -30,9 +30,10 @@ public class Player extends User implements Participant {
         return name;
     }
 
-    public double getPuntuation(String category){
+    public double getPuntuation(String category) {
         return puntuation.get(category);
     }
+
     public String getTeam() {
         return team;
     }

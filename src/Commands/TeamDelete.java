@@ -12,19 +12,19 @@ public class TeamDelete extends Command {
     @Override
     public void execute(String[] arguments) {
         assert OptionsMenu.getLoggedUser() instanceof Administrator;
-        assert arguments.length==2;
-        int i= getPositionInList(arguments[1], OptionsMenu.getTeams());
+        assert arguments.length == 2;
+        int i = getPositionInList(arguments[1], OptionsMenu.getTeams());
         Team team = OptionsMenu.getTeams().get(i);
         boolean active = false;
-        int j=0;
-        while (!active && j<team.getTournamentsRegistered().size()){
-            if (team.getTournamentsRegistered().get(j).inProgress()){
-                active=true;
+        int j = 0;
+        while (!active && j < team.getTournamentsRegistered().size()) {
+            if (team.getTournamentsRegistered().get(j).inProgress()) {
+                active = true;
             }
         }
-        if (!active){
+        if (!active) {
             OptionsMenu.getTeams().remove(i);
-        }else{
+        } else {
             System.out.println("No se puede borrar: Tiene torneo activo");
         }
 

@@ -11,8 +11,8 @@ public class TournamentDelete extends Command {
     @Override
     public void execute(String[] arguments) {
         assert OptionsMenu.getLoggedUser() instanceof Administrator;
-        assert arguments.length==2;
-        int i= getPositionInList(arguments[1], OptionsMenu.getTournaments());
+        assert arguments.length == 2;
+        int i = getPositionInList(arguments[1], OptionsMenu.getTournaments());
         OptionsMenu.getTournaments().remove(i);
     }
 }

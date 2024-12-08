@@ -16,29 +16,29 @@ public class OptionsMenu {
     private static final List<Command> commands = new ArrayList<>();
     private static User loggedUser = null;
 
-    public static void start(){
+    public static void start() {
         Scanner scanner = new Scanner(System.in);
         String completeLine;
         SettingsDefault.loadData();
         System.out.println("Bienvenido al sistema de Gestión Deportiva");
-        do{
+        do {
             System.out.println("Introduce un comando: ");
             completeLine = scanner.nextLine();
             String[] input = completeLine.split(" ");
-            boolean correct=false;
+            boolean correct = false;
 
-            for(Command command : commands){
-                if (command.getName().equalsIgnoreCase(input[0])){
+            for (Command command : commands) {
+                if (command.getName().equalsIgnoreCase(input[0])) {
                     command.execute(input);
-                    correct=true;
+                    correct = true;
                 }
             }
 
-            if (!correct && !input[0].equalsIgnoreCase("close")){
+            if (!correct && !input[0].equalsIgnoreCase("close")) {
                 System.out.println("Comando incorrecto");
             }
 
-        }while (!completeLine.equalsIgnoreCase("close"));
+        } while (!completeLine.equalsIgnoreCase("close"));
     }
 
     public static List<Administrator> getAdministrators() {

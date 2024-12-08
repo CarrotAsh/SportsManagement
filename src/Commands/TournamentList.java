@@ -15,8 +15,8 @@ public class TournamentList extends Command {
 
     @Override
     public void execute(String[] arguments) {
-        assert arguments.length==1;
-        if (OptionsMenu.getLoggedUser()==null){
+        assert arguments.length == 1;
+        if (OptionsMenu.getLoggedUser() == null) {
             for (int i = 0; i < OptionsMenu.getTournaments().size(); i++) {
                 Tournament tournament = OptionsMenu.getTournaments().get(i);
                 System.out.println("Participantes de " + tournament.getName() + ":");
@@ -24,17 +24,17 @@ public class TournamentList extends Command {
                     System.out.println(tournament.getParticipants().get(j).getName());
                 }
             }
-        }else {
-            if (OptionsMenu.getLoggedUser() instanceof Administrator){
-                for (int i = OptionsMenu.getTournaments().size()-1; i >=0 ; i--) {
-                    if (OptionsMenu.getTournaments().get(i).isFinish()){
+        } else {
+            if (OptionsMenu.getLoggedUser() instanceof Administrator) {
+                for (int i = OptionsMenu.getTournaments().size() - 1; i >= 0; i--) {
+                    if (OptionsMenu.getTournaments().get(i).isFinish()) {
                         OptionsMenu.getTournaments().remove(i);
                     }
                 }
             }
             for (int i = 0; i < OptionsMenu.getTournaments().size(); i++) {
                 Tournament tournament = OptionsMenu.getTournaments().get(i);
-                System.out.println("Participantes de " + tournament.getName() + ": (ordenados por " + tournament.getCategory()+")");
+                System.out.println("Participantes de " + tournament.getName() + ": (ordenados por " + tournament.getCategory() + ")");
 
                 List<Participant> aux = new ArrayList<>(tournament.getParticipants());
                 aux.sort((p1, p2) -> Double.compare(p2.getPuntuation(tournament.getCategory()), p1.getPuntuation(tournament.getCategory())));

@@ -12,13 +12,13 @@ public class TeamRemove extends Command {
     @Override
     public void execute(String[] arguments) {
         assert OptionsMenu.getLoggedUser() instanceof Administrator;
-        assert arguments.length==2;
+        assert arguments.length == 2;
         arguments = arguments[1].split(";");
-        assert arguments.length==2;// namePlayer;nameTeam
+        assert arguments.length == 2;// namePlayer;nameTeam
         int i = getPositionInList(arguments[1], OptionsMenu.getTeams());
         int j = getPositionInList(arguments[0], OptionsMenu.getTeams().get(i).getPlayersTeam());
         OptionsMenu.getTeams().get(i).getPlayersTeam().remove(j);
-        Player player = OptionsMenu.getPlayers().get(getPositionInList(arguments[0],OptionsMenu.getPlayers()));
+        Player player = OptionsMenu.getPlayers().get(getPositionInList(arguments[0], OptionsMenu.getPlayers()));
         player.setTeam(null);
     }
 }

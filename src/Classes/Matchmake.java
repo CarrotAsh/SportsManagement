@@ -10,8 +10,8 @@ public class Matchmake {
         return match;
     }
 
-    public void addParticipant(Participant participant, int p){
-        match[p]=participant;
+    public void addParticipant(Participant participant, int p) {
+        match[p] = participant;
     }
 
     public String toString() {

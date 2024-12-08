@@ -17,13 +17,13 @@ public class Tournament implements Nameable {
     private final List<Participant> participants = new ArrayList<>();
     private final List<Matchmake> matchs = new ArrayList<>();
 
-    public Tournament(String name, LocalDate startDate, LocalDate endDate, String league, String sport, String category){
-        this.name=name;
-        this.startDate=startDate;
-        this.endDate=endDate;
-        this.league=league;
-        this.sport=sport;
-        this.category=category;
+    public Tournament(String name, LocalDate startDate, LocalDate endDate, String league, String sport, String category) {
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.league = league;
+        this.sport = sport;
+        this.category = category;
     }
 
     public String getName() {
@@ -42,21 +42,21 @@ public class Tournament implements Nameable {
         return matchs;
     }
 
-    public boolean inProgress(){
-        boolean inProgress=false;
+    public boolean inProgress() {
+        boolean inProgress = false;
         LocalDate today = LocalDate.now();
-        if (today.isEqual(startDate) || today.isEqual(endDate) || (today.isAfter(startDate) && today.isBefore(endDate)) ){
-            inProgress=true;
+        if (today.isEqual(startDate) || today.isEqual(endDate) || (today.isAfter(startDate) && today.isBefore(endDate))) {
+            inProgress = true;
 
         }
-        return  inProgress;
+        return inProgress;
     }
 
-    public boolean isFinish(){
-        boolean isFinish=false;
+    public boolean isFinish() {
+        boolean isFinish = false;
         LocalDate today = LocalDate.now();
-        if (today.isAfter(endDate)){
-            isFinish=true;
+        if (today.isAfter(endDate)) {
+            isFinish = true;
         }
         return isFinish;
     }

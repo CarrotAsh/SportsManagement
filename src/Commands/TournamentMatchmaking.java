@@ -16,30 +16,30 @@ public class TournamentMatchmaking extends Command {
     @Override
     public void execute(String[] arguments) {
         assert OptionsMenu.getLoggedUser() instanceof Administrator;
-        assert arguments.length==2; // -m/-a;nameTournament
-        arguments=arguments[1].split(";");
-        assert arguments.length==2;
+        assert arguments.length == 2; // -m/-a;nameTournament
+        arguments = arguments[1].split(";");
+        assert arguments.length == 2;
         Tournament tournament = OptionsMenu.getTournaments().get(getPositionInList(arguments[1], OptionsMenu.getTournaments()));
-        assert tournament.inProgress() && tournament.getParticipants().size()%2==0;
+        assert tournament.inProgress() && tournament.getParticipants().size() % 2 == 0;
 
-        if (arguments[0].equals("-m")){
+        if (arguments[0].equals("-m")) {
             System.out.println("Participantes del torneo:");
             for (int i = 0; i < tournament.getParticipants().size(); i++) {
                 System.out.println(tournament.getParticipants().get(i).getName());
             }
-            int c=0;
+            int c = 0;
             Scanner scanner = new Scanner(System.in);
             do {
                 System.out.println("Introduce emparejamiento: ");
                 String line = scanner.nextLine();
                 String[] arg = line.split(";");
-                assert arg.length==2 && withoutMatchInTournament(arg[0], tournament.getMatchs()) && withoutMatchInTournament(arg[0], tournament.getMatchs());
+                assert arg.length == 2 && withoutMatchInTournament(arg[0], tournament.getMatchs()) && withoutMatchInTournament(arg[0], tournament.getMatchs());
                 Matchmake match = new Matchmake();
-                match.addParticipant(tournament.getParticipants().get(getPositionInList(arg[0], tournament.getParticipants())) , 0);
+                match.addParticipant(tournament.getParticipants().get(getPositionInList(arg[0], tournament.getParticipants())), 0);
                 match.addParticipant(tournament.getParticipants().get(getPositionInList(arg[1], tournament.getParticipants())), 1);
                 tournament.getMatchs().add(match);
                 c++;
-            } while (c<tournament.getParticipants().size()/2);
+            } while (c < tournament.getParticipants().size() / 2);
 
         } else if (arguments[0].equals("-a")) {
             List<Participant> aux = tournament.getParticipants();
@@ -51,8 +51,7 @@ public class TournamentMatchmaking extends Command {
                 match.addParticipant(aux.get(i + 1), 1);
                 tournament.getMatchs().add(match);
             }
-        }
-        else{
+        } else {
             System.out.println("Argumento de emparejamiento invalido");
         }
 
