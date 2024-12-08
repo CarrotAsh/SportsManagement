@@ -16,6 +16,7 @@ public class TournamentRemove extends Command {
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==1 || arguments.length==2; // nameTournament / nameTournament;nameTeam
+
         int j = getPositionInList(arguments[0], OptionsMenu.getTournaments());
         Tournament tournament = OptionsMenu.getTournaments().get(j);
 

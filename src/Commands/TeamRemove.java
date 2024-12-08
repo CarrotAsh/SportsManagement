@@ -15,6 +15,7 @@ public class TeamRemove extends Command {
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==2;// namePlayer;nameTeam
+
         int i = getPositionInList(arguments[1], OptionsMenu.getTeams());
         int j = getPositionInList(arguments[0], OptionsMenu.getTeams().get(i).getPlayersTeam());
         OptionsMenu.getTeams().get(i).getPlayersTeam().remove(j);

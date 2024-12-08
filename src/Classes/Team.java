@@ -19,14 +19,14 @@ public class Team implements Participant {
     }
 
     public double getPuntuation(String category){
-        double media = 0.0;
+        double average = 0.0;
         for (Player player : playersTeam) {
-            media += player.getPuntuation(category);
+            average += player.getPuntuation(category);
         }
         if (!playersTeam.isEmpty()){
-            media = media/playersTeam.size();
+            average = average/playersTeam.size();
         }
-        return media;
+        return average;
     }
 
     public List<Player> getPlayersTeam() {

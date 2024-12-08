@@ -14,6 +14,7 @@ public class TournamentAdd extends Command {
         assert arguments.length==2;
         arguments = arguments[1].split(";");
         assert arguments.length==1 || arguments.length==2; // nameTournament / nameTournament;nameTeam
+
         int i = getPositionInList(arguments[0], OptionsMenu.getTournaments());
         Tournament tournament= OptionsMenu.getTournaments().get(i);
         assert !tournament.inProgress();

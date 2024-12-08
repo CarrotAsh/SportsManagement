@@ -33,7 +33,7 @@ public class TournamentMatchmaking extends Command {
                 System.out.println("Introduce emparejamiento: ");
                 String line = scanner.nextLine();
                 String[] arg = line.split(";");
-                assert arg.length==2 && withoutMatchInTournament(arg[0], tournament.getMatchs()) && withoutMatchInTournament(arg[0], tournament.getMatchs());
+                assert arg.length==2 && withoutMatchInTournament(arg[0], tournament.getMatchs()) && withoutMatchInTournament(arg[1], tournament.getMatchs());
                 Matchmake match = new Matchmake();
                 match.addParticipant(tournament.getParticipants().get(getPositionInList(arg[0], tournament.getParticipants())) , 0);
                 match.addParticipant(tournament.getParticipants().get(getPositionInList(arg[1], tournament.getParticipants())), 1);

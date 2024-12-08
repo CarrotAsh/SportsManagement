@@ -16,6 +16,7 @@ public class TournamentList extends Command {
     @Override
     public void execute(String[] arguments) {
         assert arguments.length==1;
+
         if (OptionsMenu.getLoggedUser()==null){
             for (int i = 0; i < OptionsMenu.getTournaments().size(); i++) {
                 Tournament tournament = OptionsMenu.getTournaments().get(i);

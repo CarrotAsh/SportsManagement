@@ -23,7 +23,7 @@ public class PlayerCreate extends Command {
             OptionsMenu.getPlayers().add(player);
 
         }catch (Exception e){
-            System.out.println("Error: Algún dato no es correcto");
+            System.out.println("Error: Algún dato de las puntuaciones no ha sido numerico");
         }
 
     }
