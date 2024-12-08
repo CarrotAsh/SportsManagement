@@ -17,5 +17,4 @@ public class Matchmake {
     public String toString() {
         return match[0].getName() + " vs " + match[1].getName();
     }
-
 }

@@ -10,21 +10,21 @@ public class Team implements Participant {
     private final List<Player> playersTeam = new ArrayList<>();
     private final List<Tournament> tournamentsRegistered = new ArrayList<>();
 
-    public Team(String name) {
-        this.name = name;
+    public Team(String name){
+        this.name=name;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getPuntuation(String category) {
+    public double getPuntuation(String category){
         double media = 0.0;
         for (Player player : playersTeam) {
             media += player.getPuntuation(category);
         }
-        if (!playersTeam.isEmpty()) {
-            media = media / playersTeam.size();
+        if (!playersTeam.isEmpty()){
+            media = media/playersTeam.size();
         }
         return media;
     }
