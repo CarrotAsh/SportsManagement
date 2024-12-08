@@ -17,14 +17,14 @@ public class TournamentCreate extends Command {
     public void execute(String[] arguments) {
         assert OptionsMenu.getLoggedUser() instanceof Administrator;
         assert arguments.length==2;
-        arguments = arguments[1].split(";"); //name;startDate;endDate;category
-        assert arguments.length==4 && !existInList(arguments[0], OptionsMenu.getTournaments());
+        arguments = arguments[1].split(";"); //name;startDate;endDate;league;sport;category
+        assert arguments.length==6 && !existInList(arguments[0], OptionsMenu.getTournaments());
 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try{
             LocalDate startDate=LocalDate.parse(arguments[1], format);
             LocalDate endDate=LocalDate.parse(arguments[2], format);
-            Tournament tournament = new Tournament(arguments[0],startDate,endDate,arguments[3]);
+            Tournament tournament = new Tournament(arguments[0],startDate,endDate,arguments[3], arguments[4],arguments[5]);
             OptionsMenu.getTournaments().add(tournament);
         }catch (Exception e){
             System.out.println("Fechas incorrectas");

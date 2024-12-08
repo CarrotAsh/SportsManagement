@@ -33,6 +33,8 @@ class Tournament{
     - String name
     - LocalDate startDate
     - LocalDate endDate
+    - String league
+    - String sport
     - String category
     - List<Participant> participants
     - List<Matchmake> matchs
@@ -46,6 +48,8 @@ class Tournament{
 
 class Player{
    - String name
+   - String surname
+   - String DNI
    - HashMap<String, Double> puntuation
    - String team
    - List<Tournament> tournamentsRegistered

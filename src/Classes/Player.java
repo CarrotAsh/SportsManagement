@@ -8,13 +8,17 @@ import java.util.List;
 
 public class Player extends User implements Participant {
     private final String name;
+    private final String surname;
+    private final String DNI;
     private final HashMap<String, Double> puntuation = new HashMap<>();
     private String team = null;
     private final List<Tournament> tournamentsRegistered = new ArrayList<>();
 
-    public Player(String userName, String password, String name, double score, double winMatch, double assistScore, double tournamentsWin, double moneyWin) {
+    public Player(String userName, String password, String name, String surname, String DNI, double score, double winMatch, double assistScore, double tournamentsWin, double moneyWin) {
         super(userName, password);
         this.name = name;
+        this.surname = surname;
+        this.DNI = DNI;
         this.puntuation.put("score", score);
         this.puntuation.put("winMatch", winMatch);
         this.puntuation.put("assistScore", assistScore);

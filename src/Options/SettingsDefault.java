@@ -18,12 +18,12 @@ public class SettingsDefault {
         OptionsMenu.getAdministrators().add(new Administrator("admin@alumnos.upm.es", "1234"));
         OptionsMenu.getAdministrators().add(new Administrator("admin2@alumnos.upm.es", "1111"));
 
-        OptionsMenu.getPlayers().add(new Player("alvaro@alumnos.upm.es", "12345", "Alvaro", 12, 15, 4, 10, 1000));
-        OptionsMenu.getPlayers().add(new Player("adrian@alumnos.upm.es", "12345", "Adrian",8, 12, 5, 5, 500));
-        OptionsMenu.getPlayers().add(new Player("ines@alumnos.upm.es", "12345", "Ines", 10, 10, 2, 5, 570));
-        OptionsMenu.getPlayers().add(new Player("fran@alumnos.upm.es", "12345", "Fran", 9, 8, 1, 4, 450));
-        OptionsMenu.getPlayers().add(new Player("javier@alumnos.upm.es", "12345", "Javier", 7, 5, 1, 4, 350));
-        OptionsMenu.getPlayers().add(new Player("carlos@alumnos.upm.es", "12345", "Carlos", 11, 9, 7, 3, 750));
+        OptionsMenu.getPlayers().add(new Player("alvaro@alumnos.upm.es", "12345", "Alvaro", "Rojo",  "23409234S", 12, 15, 4, 10, 1000));
+        OptionsMenu.getPlayers().add(new Player("adrian@alumnos.upm.es", "12345", "Adrian", "Perez",  "73657378G",8, 12, 5, 5, 500));
+        OptionsMenu.getPlayers().add(new Player("ines@alumnos.upm.es", "12345", "Ines", "Gomez",  "98567183W", 10, 10, 2, 5, 570));
+        OptionsMenu.getPlayers().add(new Player("fran@alumnos.upm.es", "12345", "Fran", "Gonzalez",  "78234109A", 9, 8, 1, 4, 450));
+        OptionsMenu.getPlayers().add(new Player("javier@alumnos.upm.es", "12345", "Javier", "Carvajal",  "67157835L", 7, 5, 1, 4, 350));
+        OptionsMenu.getPlayers().add(new Player("carlos@alumnos.upm.es", "12345", "Carlos", "Fernandez",  "20987157V", 11, 9, 7, 3, 750));
 
         OptionsMenu.getTeams().add(new Team("IWSIM21"));
         OptionsMenu.getTeams().add(new Team("IWSIM22"));
@@ -35,12 +35,12 @@ public class SettingsDefault {
         OptionsMenu.getTeams().get(3).getPlayersTeam().add(OptionsMenu.getPlayers().get(1));
 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        Tournament tournamentF = new Tournament("TorneoFutbol", LocalDate.parse("22/12/2024", format), LocalDate.parse("24/12/2024", format),  "score");
+        Tournament tournamentF = new Tournament("TorneoFutbol", LocalDate.parse("22/12/2024", format), LocalDate.parse("24/12/2024", format), "Liga 1", "Futbol", "score");
         tournamentF.getParticipants().add(OptionsMenu.getPlayers().get(0));
         tournamentF.getParticipants().add(OptionsMenu.getPlayers().get(1));
         tournamentF.getParticipants().add(OptionsMenu.getPlayers().get(2));
         tournamentF.getParticipants().add(OptionsMenu.getPlayers().get(3));
-        Tournament tournamentB = new Tournament("TorneoBaloncesto", LocalDate.parse("28/12/2024", format), LocalDate.parse("30/12/2024", format), "winMatch");
+        Tournament tournamentB = new Tournament("TorneoBaloncesto", LocalDate.parse("28/12/2024", format), LocalDate.parse("30/12/2024", format), "Liga 3", "Baloncesto", "winMatch");
         tournamentB.getParticipants().add(OptionsMenu.getPlayers().get(2));
         tournamentB.getParticipants().add(OptionsMenu.getPlayers().get(3));
         tournamentB.getParticipants().add(OptionsMenu.getTeams().get(0));
